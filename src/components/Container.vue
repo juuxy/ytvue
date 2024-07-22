@@ -1,19 +1,18 @@
 <script setup lang="ts">
 
 import ButtonList from "@/components/buttonList.vue";
+import times from "@/components/antv/getdate.vue"
 import UnderMap from "@/components/underMap.vue";
 import {ref} from "vue";
-import rcpq from "@/assets/btn/rcpq01.svg";
-import rsdl from "@/assets/btn/rsdl.svg";
-import zpfw from "@/assets/btn/zpfw.svg";
-import ks from "@/assets/btn/ks.svg";
-import ktps from "@/assets/btn/ktps.svg";
-import lgsc from "@/assets/btn/lgsc.svg";
-import zp from "@/assets/btn/zp.svg";
-import px from "@/assets/btn/px.svg";
-import wbfw from "@/assets/btn/wbfw.svg";
-import gjrc from "@/assets/btn/gjrc.svg";
-import rsda from "@/assets/btn/rsda.svg";
+import rcpq from "@/assets/btn/rcpq02.svg";
+import rsdl from "@/assets/btn/rsdl01.svg";
+import ks from "@/assets/btn/ks02.svg";
+import lgsc from "@/assets/btn/lgsc02.svg";
+import zp from "@/assets/btn/zp02.svg";
+import px from "@/assets/btn/px02.svg";
+import wbfw from "@/assets/btn/wbfw02.svg";
+import gjrc from "@/assets/btn/gjrc02.svg";
+import rsda from "@/assets/btn/rsda02.svg";
 
 
 // 云才出山
@@ -54,19 +53,19 @@ const yccsBtns = ref([
     imageSrc: rsdl,
     desc: '人事代理',
   },
- 
+
   {
-    imageSrc:rsda,
-    desc:'人事档案'
+    imageSrc: rsda,
+    desc: '人事档案'
   }
 
 ]);
 
-import yqgk from "@/assets/btn/yqgk.svg";
-import zs from "@/assets/btn/zs.svg";
-import sthb from "@/assets/btn/sthb.svg";
-import yqdt from "@/assets/btn/yqdt.svg";
-import jyxc from "@/assets/btn/jyxc.svg";
+import yqgk from "@/assets/btn/yqgk02.svg";
+import zs from "@/assets/btn/zs02.svg";
+import sthb from "@/assets/btn/sthb02.svg";
+import yqdt from "@/assets/btn/yqdt02.svg";
+import jyxc from "@/assets/btn/jyxc02.svg";
 // 人力资源产业园
 const rlzyBtns = ref([
   {
@@ -91,10 +90,10 @@ const rlzyBtns = ref([
   },
 ])
 
-import zbyw from "@/assets/btn/zbyw.svg";
-import wljs from "@/assets/btn/wljs.svg";
-import fycc from "@/assets/btn/fycc.svg";
-import chwl from "@/assets/btn/chwl.svg";
+import zbyw from "@/assets/btn/zbyw02.svg";
+import wljs from "@/assets/btn/wljs02.svg";
+import fycc from "@/assets/btn/fycc02.svg";
+import chwl from "@/assets/btn/chwl02.svg";
 // y云品出滇
 const ypcd = ref([
   {
@@ -115,9 +114,11 @@ const ypcd = ref([
   },
 
 ])
-import qyjs from "@/assets/btn/qyjs.svg";
-import djyl from "@/assets/btn/djyl.svg";
-import zgzj from "@/assets/btn/zgzj.svg";
+import qyjs from "@/assets/btn/qyjs02.svg";
+import djyl from "@/assets/btn/djyl02.svg";
+import zgzj from "@/assets/btn/zgzj02.svg";
+import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
+
 const gyytrl = ref([
   {
     imageSrc: qyjs,
@@ -136,86 +137,97 @@ const gyytrl = ref([
 ])
 
 </script>
-
 <template>
 
-<!-- top -->
+  <!-- top -->
   <el-container class="out_container">
     <el-header height="12vh">
-<!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
-                  
-<img src="/src//assets/logo.png" style="width:18%"/>
+      <!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
 
-      <!-- <h1 style="width: 100vw;font-size: 1.5vh; text-align: center;"></h1> -->
+      <img src="/src//assets/logo.png" style="width:13%"/>
+
       <div class="placeholder" style="flex: 1;"></div>
+      <div
+                style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
+              <el-button class="bt1" type="primary" >企业登录/注册</el-button>
+              <el-button class="bt2" type="primary" >个人登录/注册</el-button>
+            </div>
     </el-header>
-    <el-main style="height: 80vh" >
+    <el-main style="height: 80vh">
       <!-- body -->
       <el-row style="height:80vh">
         <el-col :span="8"
-                style="height: 75vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template' style="height:35vh;width:30vw">
-            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>
-                       <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
+                style="height: 85vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+          <div class='template' style="height:45vh;width:30vw">
+                <block-stack-bar-chart></block-stack-bar-chart>
+            <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
+            <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
           </div>
 
-        <!-- 登录注册 -->
+          <!-- 登录注册 -->
           <div class='template' style="height: 35vh;width: 30vw;;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-            <div
-                style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 30vh">
-              <el-button class="bt" type="primary" >企业登录/注册</el-button>
-              <el-button class="bt" type="primary" >个人登录/注册</el-button>
+     
+
+            <!-- 新闻公告 -->
+            <el-text
+                style="font-size: 1.3vw;text-align: left;font-weight: bold;color:#283a3fd2;">
+              公 告
+            </el-text>
+            <div class="news-info">
+              <p style="width: 75%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
+              <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>
+              <p style="width: 75%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
+              <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>
+              <p style="width: 75%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
+              <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
             </div>
-          
-        <!-- 新闻公告 -->
-            <el-text style="width: 30vw;height:3vh;font-size: 1.3vw;text-align: left;padding-left: 2vw;font-weight: bold;color: aliceblue;">公告</el-text>
-            <div class="news-info" >
-              <p style="width: 18vw;font-size: 1.2vw">一则新闻</p>
-              <p style="width: 9vw;font-size: 1.2vw">2024-01-01</p>
-            </div>
-            <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
-    <li v-for="i in count" class="infinite-list-item">{{ i }}</li>
-  </ul>
           </div>
 
         </el-col>
         <!-- li2 -->
-        <el-col :span="8"
-        style="height: 75vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+        <el-col :span="9"
+                class="col-flex"   style="height: 85vh;">
           <!--云才出山-->
-          <div class='template'>
-            <button-list :title="'云才出山'" :btns="yccsBtns"></button-list>
+          <div class='template'  style="height: 45vh;width: 30vw;">
+            <button-list :title="'云才出山'" :btns="yccsBtns" ></button-list>
           </div>
-          <div class='template' style="height:30vh;width:33vw">
+          <div class='template' style="height: 35vh;width:30vw;">
             <button-list :title="'人力资源产业园服务'" :btns="rlzyBtns"></button-list>
           </div>
         </el-col>
 
         <!-- li3 -->
-        <el-col :span="8"
-                style="height: 75vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template' style="height:35vh;width:22vw">
-            <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
+        <el-col :span="7"
+        style="height:30vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+          <div class='template3'>
+            <button-list :title="'云品出滇'" :btns="ypcd" ></button-list>
           </div>
-          <div class='template' style="height:35vh;width:22vw">
+          <div class='template3' style="margin-top: 5vh">
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
-
+          <div class="foot">
+            <img src="/src/assets/btn/gzh.png" style="width:10vh;padding-right: 4vw;"/>
+            <img src="/src/assets/btn/dt.png" style="width:10vh;"/>
+            <img src="/src/assets/btn//text.png" style="height: 9vh;"/>
+          </div>
+          <text style="color: aliceblue;font-size: 1.6vh;margin-top: 3vh;">
+          Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
+          <times></times>
+        </text>
         </el-col>
+
+     
       </el-row>
       <!--      &lt;!&ndash; 其他内容 &ndash;&gt;-->
-      <!--      <div style="background-color: rgba(0, 0, 0, 0); height: 100%; z-index: 99; width: 65vw">-->
-      <!--        <button-list></button-list>-->
-      <!--      </div>-->
+      <!-- <div style="background-color: rgba(0, 0, 0, 0); height: 100%; z-index: 99; width: 65vw">
+      <button-list></button-list> -->
+      <!-- </div> -->
 
 
     </el-main>
 
     <!-- foot -->
-    <el-footer>
-      <el-text class="ft">Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有</el-text>
-      <img alt="Vue logo" class="QRCode" src="@/assets/QRCode.png" />
-    </el-footer>
+   
 
   </el-container>
 
@@ -239,7 +251,8 @@ const gyytrl = ref([
   bottom: 0;
 }
 
-.aside_main_footer_container {
+
+/* .aside_main_footer_container {
   width: 100vw;
 }
 
@@ -249,7 +262,7 @@ const gyytrl = ref([
 
 .aside_container {
   width: 18%;
-}
+} */
 
 /* top */
 .el-header {
@@ -258,7 +271,7 @@ const gyytrl = ref([
   display: flex;
   align-items: center;
   width: 100vw;
-  box-shadow: 0 1vh 1vw rgba(0,0,0,0.1); /* 轻微的阴影效果提升层次感 */
+  box-shadow: 0 1vh 1vw rgba(0, 0, 0, 0.1); /* 轻微的阴影效果提升层次感 */
 }
 
 .el-aside {
@@ -267,43 +280,54 @@ const gyytrl = ref([
 
 }
 
+
 .el-main {
   color: #333;
   width: 100vw;
-  --el-main-padding:0.1vh;
+  --el-main-padding: 0.1vh;
 }
 
-.el-footer {
-  height:6vh;
+/* .el-footer {
+  height: 6vh;
   width: 100vw;
   background-color: #46505a;
   text-align: center;
   align-content: center;
-  position: relative; /* 确保子元素相对于父元素定位 */
+  position: relative; /* 确保子元素相对于父元素定位 
 
-}
-.ft{
-  color: #d7e8df;
-  font-size: 2vh;
-}
-.QRCode {
-  position: absolute; /* 相对于父元素定位 */
-  right: 0; /* 定位到父元素的右侧 */
-  top: 0;
-  width: 3vw; /* 示例宽度 */
-  height: 6vh; /* 示例高度 */
-  background-color: lightgray; /* 示例背景色 */
-}
+} */
+
+
+
 
 /* li1 */
 .template {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-around;
   border-radius: 5vh;
-  background-color: #d7e8df1f;
+  background-color: #dce6e176;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
   height:40vh;
-  width:33vw
- 
+  width:35vw;
+}
+.template3{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5vh;
+  background-color: #dce6e176;
+  border: #2c3e5031 solid 0.1vw;
+  margin: 1vh;
+  text-align: center;
+  width: 29vw;
+  height: 55vh;
+
 }
 /* 业务数字大屏 */
 .tem-title {
@@ -314,29 +338,48 @@ const gyytrl = ref([
   font-weight: bold;
   width: 30vw;
   height: 3vh;
-  padding:1vh 1.5vw;
-  background:linear-gradient(to right,#ffffffc0,#d7e8df00) ;
+  padding: 1vh 1.5vw;
+  background: linear-gradient(to right, #ffffffc0, #d7e8df00);
   border-top-left-radius: 5vh;
 
   color: #2c3e50;
 }
+
 /* 登录注册 */
-.bt{
-width:14vw;
+.bt1{
+width:12vw;
 height: 6vh;
 font-size: 1.2vw;
 border-radius: 2vh;
-background-color: rgba(255, 255, 255, 0.349);
+background-color: #394867}
+.bt2{
+width:12vw;
+height: 6vh;
+font-size: 1.2vw;
+border-radius: 2vh;
+background-color:white;
+color:#394867;
 }
+
 /* 公告表单 */
-.news-info{
+.news-info {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 29vw;
-  height: 70vh;
-  padding: 1;
-  background-color: #d7e8df85;
-  border-radius: 2vh;
+  height:25vh;
+  background-color: rgba(240, 248, 255, 0.377);
+}
+
+.col-flex {
+  margin-left: -5vh;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.foot{
+  margin-top:10vh;
+  
 }
 </style>

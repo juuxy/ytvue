@@ -23,7 +23,7 @@ body {
 }
 
 #app {
-  background:  url('@/assets/background/bg1.jpg');
+  background:  url('@/assets/background/bg6.png');
   /* 背景图片覆盖整个容器 */
   background-size: cover;
   /* 保持背景图片固定，不随页面滚动 */

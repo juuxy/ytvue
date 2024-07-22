@@ -14,9 +14,9 @@ const props = defineProps({
 <template>
   <el-text type="primary" tag="p" class="tem-title">{{ props.title }}</el-text>
   <div class='btns'>
-    <div v-for="item in props.btns" :key="item.imageSrc">
-      <img :src="item.imageSrc" alt="Logo" style="height:4vh;width:5vw;padding:2vh 2.5vh;">
-      <p style="margin: 0vh 1vw;">{{ item.desc }}</p>
+    <div class="ico" v-for="item in props.btns" :key="item.imageSrc">
+      <img class="imag":src="item.imageSrc" alt="Logo" >
+      <p class="desc">{{ item.desc }}</p>
     </div>
   </div>
 
@@ -31,21 +31,42 @@ const props = defineProps({
   flex-wrap: wrap;
   color: #426169d2;
   font-weight: bold;
-  font-size: 1.6vh;
-  padding: 1vh 2vh;
+  padding-left: 3vh
+ 
+
  }
 
-
+.ico{
+  background-color: #394867;
+  border-radius: 2vh;
+  margin: 2vh;
+  width: 10vh;
+  height: 10vh;
+  margin-top: 0vh
+}
+.ico:hover{
+  background-color: #39486751;
+}
+.imag{
+  width: 5vh;
+  padding: 0.8vh;
+}
+.desc{
+  color: aliceblue;
+  margin-top: 0vh;
+  font-size: 1.6vh
+  
+}
 .tem-title {
   display: inline-block;
   vertical-align: middle;
-  text-align: left;
+  text-align: center;
   font-size: 3vh;
   font-weight: bold;
-  padding:1vh 4vh;
+  padding: 2vh;
   color: #283a3fd2;
   width: 88%;
-  background:linear-gradient(to right,#ffffffc0,#d7e8df00) ;
+  /* background:linear-gradient(to right,#ffffffc0,#d7e8df00) ; */
   border-top-left-radius:5vh ;
 }
 </style>
