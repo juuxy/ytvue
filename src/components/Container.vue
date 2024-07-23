@@ -158,19 +158,19 @@ const gyytrl = ref([
       <el-row style="height:80vh">
         <el-col :span="8"
                 style="height: 85vh;width:30vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template' style="height:45vh;width:30vw;margin-left: -2vw">
+          <div class='template' style="height:45vh;width:30vw;margin-left: 0vw">
                 <block-stack-bar-chart></block-stack-bar-chart>
             <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
             <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
           </div>
 
           <!-- 登录注册 -->
-          <div class='template' style="height: 35vh;width: 30vw;margin-left: -2vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+          <div class='template' style="height: 35vh;width: 30vw;margin-left:0vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
      
 
             <!-- 新闻公告 -->
             <el-text
-                style="font-size: 1.3vw;text-align: left;font-weight: bold;color:#283a3fd2;">
+                style="font-size: 3vh;text-align: left;padding: 1vh;font-weight: bold;color:black;">
               公 告
             </el-text>
             <div class="news-info">
@@ -206,12 +206,12 @@ const gyytrl = ref([
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
           <div class="foot">
-            <img src="/src/assets/btn/gzh.png" style="width:10vh;padding-right: 4vw;"/>
+            <img src="/src/assets/btn/gzh.png" style="width:10vh;padding-right: 3vw;"/>
             <img src="/src/assets/btn/dt.png" style="width:10vh;"/>
-            <img src="/src/assets/btn//text.png" style="height: 9vh;"/>
+            <img src="/src/assets/btn//text.png" style="height:9vh;margin-top: 1vh"/>
           </div>
-          <text style="color: aliceblue;font-size: 1.6vh;margin-top: 3vh;">
-          Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
+          <text style="color: aliceblue;font-size: 1.6vh;width: 32vw;;margin-top: 2vh;">
+        Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
           <times></times>
         </text>
         </el-col>
@@ -350,14 +350,16 @@ width:12vw;
 height: 6vh;
 font-size: 1.2vw;
 border-radius: 2vh;
-background-color: #394867}
+background-color: #394867;
+border:#2c3e50}
 .bt2{
 width:12vw;
 height: 6vh;
 font-size: 1.2vw;
 border-radius: 2vh;
-background-color:white;
+background-color:rgba(255, 255, 255, 0.727);
 color:#394867;
+border: #2c3e50
 }
 
 /* 公告表单 */
@@ -365,8 +367,11 @@ color:#394867;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height:25vh;
-  background-color: rgba(240, 248, 255, 0.377);
+  height:30vh;
+  width: 30vw;
+  border-bottom-right-radius: 5vh;
+  border-bottom-left-radius: 5vh;
+  background-color: rgba(230, 231, 232, 0.864);
 }
 
 .col-flex {

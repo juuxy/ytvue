@@ -1,5 +1,5 @@
 <template>
-  <div id="location" class="chart-container"></div>
+  <div id="地区" class="chart-container"></div>
 </template>
 
 <script lang="ts" setup>
@@ -8,37 +8,37 @@ import Color from "element-plus/es/components/color-picker/src/utils/color";
 import {onMounted, ref} from 'vue';
 
 const data = ref([
-  {"type": "worker", "num": 100, "location": "五华"},
-  {"type": "jobs", "num": 30, "location": "五华"},
-  {"type": "worker", "num": 99, "location": "西山"},
-  {"type": "jobs", "num": 40, "location": "西山"},
-  {"type": "worker", "num": 70, "location": "盘龙"},
-  {"type": "jobs", "num": 80, "location": "盘龙"},
-  {"type": "worker", "num": 120, "location": "官渡"},
-  {"type": "jobs", "num": 90, "location": "官渡"},
-  {"type": "worker", "num": 60, "location": "呈贡"},
-  {"type": "jobs", "num": 50, "location": "呈贡"},
-  {"type": "worker", "num": 110, "location": "晋宁"},
-  {"type": "jobs", "num": 60, "location": "晋宁"},
-  {"type": "worker", "num": 80, "location": "安宁"},
-  {"type": "jobs", "num": 70, "location": "安宁"},
-  {"type": "worker", "num": 130, "location": "富民"},
-  {"type": "jobs", "num": 95, "location": "富民"},
-  {"type": "worker", "num": 55, "location": "宜良"},
-  {"type": "jobs", "num": 45, "location": "宜良"},
-  {"type": "worker", "num": 75, "location": "石林"},
-  {"type": "jobs", "num": 85, "location": "石林"},
-  {"type": "worker", "num": 90, "location": "嵩明"},
-  {"type": "jobs", "num": 110, "location": "嵩明"},
-  {"type": "worker", "num": 65, "location": "禄劝"},
-  {"type": "jobs", "num": 55, "location": "禄劝"},
-  {"type": "worker", "num": 50, "location": "寻甸"},
-  {"type": "jobs", "num": 65, "location": "寻甸"}
+  {"type": "worker", "人数": 100, "地区": "五华"},
+  {"type": "jobs", "人数": 30, "地区": "五华"},
+  {"type": "worker", "人数": 99, "地区": "西山"},
+  {"type": "jobs", "人数": 40, "地区": "西山"},
+  {"type": "worker", "人数": 70, "地区": "盘龙"},
+  {"type": "jobs", "人数": 80, "地区": "盘龙"},
+  {"type": "worker", "人数": 120, "地区": "官渡"},
+  {"type": "jobs", "人数": 90, "地区": "官渡"},
+  {"type": "worker", "人数": 60, "地区": "呈贡"},
+  {"type": "jobs", "人数": 50, "地区": "呈贡"},
+  {"type": "worker", "人数": 110, "地区": "晋宁"},
+  {"type": "jobs", "人数": 60, "地区": "晋宁"},
+  {"type": "worker", "人数": 80, "地区": "安宁"},
+  {"type": "jobs", "人数": 70, "地区": "安宁"},
+  {"type": "worker", "人数": 130, "地区": "富民"},
+  {"type": "jobs", "人数": 95, "地区": "富民"},
+  {"type": "worker", "人数": 55, "地区": "宜良"},
+  {"type": "jobs", "人数": 45, "地区": "宜良"},
+  {"type": "worker", "人数": 75, "地区": "石林"},
+  {"type": "jobs", "人数": 85, "地区": "石林"},
+  {"type": "worker", "人数": 90, "地区": "嵩明"},
+  {"type": "jobs", "人数": 110, "地区": "嵩明"},
+  {"type": "worker", "人数": 65, "地区": "禄劝"},
+  {"type": "jobs", "人数": 55, "地区": "禄劝"},
+  {"type": "worker", "人数": 50, "地区": "寻甸"},
+  {"type": "jobs", "人数": 65, "地区": "寻甸"}
 ]);
 
 onMounted(() => {
   const chart = new Chart({
-    container: 'location',
+    container: '地区',
     autoFit: true,
   });
 
@@ -62,8 +62,8 @@ onMounted(() => {
       })
       // .title({ title: 'hello', subtitle: 'world',titleFill:'red' })
       .data(data)
-      .encode('x', 'location')
-      .encode('y', 'num')
+      .encode('x', '地区')
+      .encode('y', '人数')
       .encode('color', 'type')
       .transform({type: 'dodgeX'})
       .interaction('elementHighlight', {background: true})
@@ -72,19 +72,19 @@ onMounted(() => {
         range: ['linear-gradient(to top, #394867, rgba(0,0,0,0))','linear-gradient(to top, #394867, rgba(0,0,0,0))'],
       })
       .axis('y', {
-        lineLineWidth: 5,
+        lineLineWidth: 2,
         // labelFormatter: (d) => d + '°C',
         lineStroke: "rgb(254,255,254)",
-        line: {style: {stroke: '#ffffff'}},
-        label: {style: {fill: '#ffffff'}},
-        tickLine: {style: {stroke: '#ffffff'}},
+        line: {style: {stroke: '#black'}},
+        label: {style: {fill: '#black'}},
+        tickLine: {style: {stroke: '#black'}},
         grid: {line: {style: {stroke: '#ff0000'}}},
         // 轴标签
         labelFontSize: 20,
-        labelFill: "#394867"
+        labelFill: "black"
       })
       .axis('x', {
-        labelFill: "#394867",
+        labelFill: "black",
         // lineLineWidth: 20,
         // lineStroke: "rgb(21,214,229)",
         // line: {style: {stroke: '#ffffff'}},
@@ -92,7 +92,7 @@ onMounted(() => {
         // tickLine: {style: {stroke: '#ffffff'}},
         // grid: {line: {style: {stroke: '#f60101'}}},
         // 轴标签
-        labelFontSize: 10,
+        labelFontSize:15,
         // labelFill: "rgb(238,205,168)",
         // labelAlign: 'horizontal'
       })
