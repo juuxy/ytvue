@@ -118,6 +118,7 @@ import qyjs from "@/assets/btn/qyjs02.svg";
 import djyl from "@/assets/btn/djyl02.svg";
 import zgzj from "@/assets/btn/zgzj02.svg";
 import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
+import G2LineAi from "@/components/antv/g2LineAi.vue";
 
 const gyytrl = ref([
   {
@@ -148,25 +149,34 @@ const gyytrl = ref([
 
       <div class="placeholder" style="flex: 1;"></div>
       <div
-                style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
-              <el-button class="bt1" type="primary" >企业登录/注册</el-button>
-              <el-button class="bt2" type="primary" >个人登录/注册</el-button>
-            </div>
+          style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
+        <el-button class="bt1" type="primary">企业登录/注册</el-button>
+        <el-button class="bt2" type="primary">个人登录/注册</el-button>
+      </div>
     </el-header>
     <el-main style="height: 80vh">
       <!-- body -->
       <el-row style="height:80vh">
         <el-col :span="8"
                 style="height: 85vh;width:30vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template' style="height:45vh;width:30vw;margin-left: 0vw">
+          <div class='template' style="height:45vh;width:30vw;margin-left: 0">
+            <el-carousel height="45vh">
+              <el-carousel-item height="45vh">
                 <block-stack-bar-chart></block-stack-bar-chart>
+              </el-carousel-item>
+              <el-carousel-item height="45vh">
+                <g2-line-ai></g2-line-ai>
+              </el-carousel-item>
+            </el-carousel>
+
             <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
             <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
           </div>
 
           <!-- 登录注册 -->
-          <div class='template' style="height: 35vh;width: 30vw;margin-left:0vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-     
+          <div class='template'
+               style="height: 35vh;width: 30vw;margin-left:0vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+
 
             <!-- 新闻公告 -->
             <el-text
@@ -186,10 +196,10 @@ const gyytrl = ref([
         </el-col>
         <!-- li2 -->
         <el-col :span="9"
-                class="col-flex"   style="height: 85vh;width: 32vw;margin-left: -3vw;">
+                class="col-flex" style="height: 85vh;width: 32vw;margin-left: -3vw;">
           <!--云才出山-->
-          <div class='template'  style="height: 45vh;width: 32vw; ">
-            <button-list :title="'云才出山'" :btns="yccsBtns" ></button-list>
+          <div class='template' style="height: 45vh;width: 32vw; ">
+            <button-list :title="'云才出山'" :btns="yccsBtns"></button-list>
           </div>
           <div class='template' style="height: 35vh;width:32vw;">
             <button-list :title="'人力资源产业园服务'" :btns="rlzyBtns"></button-list>
@@ -198,9 +208,9 @@ const gyytrl = ref([
 
         <!-- li3 -->
         <el-col :span="7"
-        style="height:30vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+                style="height:30vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
           <div class='template3'>
-            <button-list :title="'云品出滇'" :btns="ypcd" ></button-list>
+            <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
           <div class='template3' style="margin-top: 4vh">
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
@@ -211,12 +221,12 @@ const gyytrl = ref([
             <img src="/src/assets/btn//text.png" style="height:9vh;margin-top: 1vh"/>
           </div>
           <text style="color: aliceblue;font-size: 1.6vh;width: 32vw;;margin-top: 2vh;">
-        Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
-          <times></times>
-        </text>
+            Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
+            <times></times>
+          </text>
         </el-col>
 
-     
+
       </el-row>
       <!--      &lt;!&ndash; 其他内容 &ndash;&gt;-->
       <!-- <div style="background-color: rgba(0, 0, 0, 0); height: 100%; z-index: 99; width: 65vw">
@@ -227,7 +237,7 @@ const gyytrl = ref([
     </el-main>
 
     <!-- foot -->
-   
+
 
   </el-container>
 
@@ -298,8 +308,6 @@ const gyytrl = ref([
 } */
 
 
-
-
 /* li1 */
 .template {
   display: flex;
@@ -311,9 +319,10 @@ const gyytrl = ref([
   background-color: #dce6e176;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
-  height:40vh;
+  height: 40vh;
 }
-.template3{
+
+.template3 {
   display: flex;
   flex-direction: column;
   justify-items: center;
@@ -328,6 +337,7 @@ const gyytrl = ref([
   height: 55vh;
 
 }
+
 /* 业务数字大屏 */
 .tem-title {
   display: inline-block;
@@ -345,21 +355,23 @@ const gyytrl = ref([
 }
 
 /* 登录注册 */
-.bt1{
-width:12vw;
-height: 6vh;
-font-size: 1.2vw;
-border-radius: 2vh;
-background-color: #394867;
-border:#2c3e50}
-.bt2{
-width:12vw;
-height: 6vh;
-font-size: 1.2vw;
-border-radius: 2vh;
-background-color:rgba(255, 255, 255, 0.727);
-color:#394867;
-border: #2c3e50
+.bt1 {
+  width: 12vw;
+  height: 6vh;
+  font-size: 1.2vw;
+  border-radius: 2vh;
+  background-color: #394867;
+  border: #2c3e50
+}
+
+.bt2 {
+  width: 12vw;
+  height: 6vh;
+  font-size: 1.2vw;
+  border-radius: 2vh;
+  background-color: rgba(255, 255, 255, 0.727);
+  color: #394867;
+  border: #2c3e50
 }
 
 /* 公告表单 */
@@ -367,7 +379,7 @@ border: #2c3e50
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height:30vh;
+  height: 30vh;
   width: 30vw;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
@@ -381,8 +393,24 @@ border: #2c3e50
   align-items: center;
   justify-content: space-around;
 }
-.foot{
-  margin-top:8vh;
-  
+
+.foot {
+  margin-top: 8vh;
+}
+
+
+.el-carousel {
+  height: 100%;
+  width: 100%;
+}
+
+.el-carousel__item {
+  height: 100%;
+  width: 100%;
+}
+
+.el-carousel__container {
+  height: 100%;
+  width: 100%;
 }
 </style>
