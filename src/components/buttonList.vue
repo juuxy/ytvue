@@ -31,8 +31,7 @@ const props = defineProps({
   flex-wrap: wrap;
   color: #426169d2;
   font-weight: bold;
-  padding-left: 3vh
- 
+  padding-left: 0vw
 
  }
 
