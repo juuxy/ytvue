@@ -158,15 +158,16 @@ const gyytrl = ref([
       <!-- body -->
       <el-row style="height:80vh">
         <el-col :span="8"
-                style="height: 85vh;width:30vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template' style="height:45vh;width:30vw;margin-left: 0">
-            <el-carousel height="45vh">
-              <el-carousel-item height="45vh">
+                style="height: 85vh;width:35vw;margin-left:3vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+          <div class='template' style="height:45vh;width:35vw;">
+            <el-carousel height="50vh">
+              <el-carousel-item height="50vh" >
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
-              <el-carousel-item height="45vh">
+              <el-carousel-item height="50vh">
                 <g2-line-ai></g2-line-ai>
               </el-carousel-item>
+
             </el-carousel>
 
             <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
@@ -175,12 +176,12 @@ const gyytrl = ref([
 
           <!-- 登录注册 -->
           <div class='template'
-               style="height: 35vh;width: 30vw;margin-left:0vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+               style="height: 30vh;width: 35vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
 
 
             <!-- 新闻公告 -->
             <el-text
-                style="font-size: 3vh;text-align: left;padding: 1vh;font-weight: bold;color:black;">
+                style="font-size: 3vh;text-align: left;font-weight: bold;color:black;">
               公 告
             </el-text>
             <div class="news-info">
@@ -196,19 +197,19 @@ const gyytrl = ref([
         </el-col>
         <!-- li2 -->
         <el-col :span="9"
-                class="col-flex" style="height: 85vh;width: 32vw;margin-left: -3vw;">
+                class="col-flex" style="margin-left: -1vh;">
           <!--云才出山-->
-          <div class='template' style="height: 45vh;width: 32vw; ">
+          <div class='template' style="height: 45vh;width: 29vw; ">
             <button-list :title="'云才出山'" :btns="yccsBtns"></button-list>
           </div>
-          <div class='template' style="height: 35vh;width:32vw;">
+          <div class='template' style="height: 35vh;width:29vw;">
             <button-list :title="'人力资源产业园服务'" :btns="rlzyBtns"></button-list>
           </div>
         </el-col>
 
         <!-- li3 -->
         <el-col :span="7"
-                style="height:30vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+                style="height:30vh;margin-left: -4vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
           <div class='template3'>
             <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
@@ -319,7 +320,8 @@ const gyytrl = ref([
   background-color: #dce6e176;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
-  height: 40vh;
+  height: 30vh;
+  
 }
 
 .template3 {
@@ -333,7 +335,7 @@ const gyytrl = ref([
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
   margin-top: 1vh;
-  width: 32vw;
+  width: 29vw;
   height: 55vh;
 
 }
@@ -379,8 +381,8 @@ const gyytrl = ref([
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 30vh;
-  width: 30vw;
+  height: 25vh;
+  width: 35vw;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);

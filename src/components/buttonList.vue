@@ -37,17 +37,17 @@ const props = defineProps({
 
 .ico{
   background-color: #394867;
-  border-radius: 2vh;
-  margin: 2vh;
-  width: 10vh;
-  height: 10vh;
+  border-radius: 1.5vh;
+  margin: 1.8vh;
+  width: 9vh;
+  height: 9vh;
   margin-top: 0vh
 }
 .ico:hover{
   background-color: #39486751;
 }
 .imag{
-  width: 5vh;
+  width: 4.5vh;
   padding: 0.8vh;
 }
 .desc{

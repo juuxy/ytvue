@@ -93,11 +93,12 @@ onMounted(() => {
       .area()
       .style('fill', 'linear-gradient(-90deg, white 0%, rgba(255,231,195,0) 100%)')
       .encode('shape', 'smooth');
-  chart.title({title: '招聘数&求职数趋势', titleFill: 'rgb(255,254,253)', align: 'center', titleFontSize: 28})
+  chart.title({title: '招聘数&求职数趋势', titleFill: '#394867', align: 'center', titleFontSize: 30})
   chart.render();
 });
 </script>
 
 <style scoped>
 /* 样式可以根据需要调整 */
+
 </style>

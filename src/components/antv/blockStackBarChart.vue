@@ -48,12 +48,12 @@ onMounted(async () => {
   const chart = new Chart({
     container: '地区',
     autoFit: true,
-    height: 500,
+    
   });
 
   chart
       .interval()
-      .style('fillOpacity', 0.7)
+      .style('fillOpacity', 1)
       .data(data.value)
       .encode('x', '地区')
       .encode('y', '人数')
@@ -61,7 +61,7 @@ onMounted(async () => {
       .transform({ type: 'dodgeX' })
       .interaction('elementHighlight', { background: true })
       .scale('color', {
-        range: ['#e8d782', '#12e1ca'],
+        range: ['rgba(57, 72, 103, 0.79)', 'rgba(255, 255, 255, 0.9)'],
       })
       .axis('y', {
         label: {
@@ -69,23 +69,23 @@ onMounted(async () => {
           fontSize: 20,
         },
         grid: {
-          line: { style: { stroke: '#ff0000' } },
+          line: { style: { stroke: '#000' } },
         },
       })
       .axis('x', {
         label: {
           style: { fill: '#000' },
-          fontSize: 15,
+          fontSize: 35,
         },
       })
       .legend('color', {
         itemMarkerSize: 20,
-        itemLabelFill: "#283a3fd2",
+        itemLabelFill: "#000",
         itemLabelFontSize: 20,
         labelFormatter: (datum) => (datum === 'worker' ? '派出' : '召回'),
       });
 
-  chart.title({title: '云南省人才派遣数据统计', titleFill: 'rgb(255,254,253)', align: 'center', titleFontSize: 28})
+  chart.title({title: '云南省人才派遣数据统计', titleFill: '#394867', align: 'center', titleFontSize: 28})
   chart.render();
 });
 </script>
@@ -94,11 +94,11 @@ onMounted(async () => {
 .chart-container {
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 231, 195, 0);
+  background-color: rgba(255, 231, 195, 0.003);
 }
 
 .parent-container {
   width: 100%;
-  height: 500px;
+  height:100%;
 }
 </style>
