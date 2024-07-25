@@ -36,6 +36,7 @@ const yccsBtns = ref([
   {
     imageSrc: zp,
     desc: '招聘服务',
+    url:"https://www.ynhrkf.com"
   },
   {
     imageSrc: lgsc,

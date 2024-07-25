@@ -6,17 +6,21 @@ const props = defineProps({
     type: [String]
   }, btns: {
     type: [Array]
-  }
+  },
 });
 
+function handleExternalLink(url) {  
+}  
 </script>
 
 <template>
   <el-text type="primary" tag="p" class="tem-title">{{ props.title }}</el-text>
   <div class='btns'>
-    <div class="ico" v-for="item in props.btns" :key="item.imageSrc">
+    <div class="ico" v-for="item in props.btns" :key="item.imageSrc" @click="jump(item.id)">
+      <a :href="item.url" target="_blank" rel="noopener noreferrer"> 
       <img class="imag":src="item.imageSrc" alt="Logo" >
       <p class="desc">{{ item.desc }}</p>
+      </a>
     </div>
   </div>
 
