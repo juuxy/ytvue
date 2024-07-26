@@ -36,7 +36,7 @@ const yccsBtns = ref([
   {
     imageSrc: zp,
     desc: '招聘服务',
-    url:"https://www.ynhrkf.com"
+    url: "https://www.ynhrkf.com"
   },
   {
     imageSrc: lgsc,
@@ -155,14 +155,14 @@ const gyytrl = ref([
         <el-button class="bt2" type="primary">个人登录/注册</el-button>
       </div>
     </el-header>
-    <el-main style="height: 80vh">
+    <el-main class="el-main-flex">
       <!-- body -->
-      <el-row style="height:80vh">
+      <el-row class="el-main-flex">
         <el-col :span="8"
-                style="height: 85vh;width:35vw;margin-left:3vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template' style="height:45vh;width:35vw;">
+                class="body-col">
+          <div class='template' style="height:60%">
             <el-carousel height="50vh">
-              <el-carousel-item height="50vh" >
+              <el-carousel-item height="50vh">
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
               <el-carousel-item height="50vh">
@@ -175,9 +175,9 @@ const gyytrl = ref([
             <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
           </div>
 
-          <!-- 登录注册 -->
+          <!-- 新闻公告 -->
           <div class='template'
-               style="height: 30vh;width: 35vw;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
+               style="height: 30%">
 
 
             <!-- 新闻公告 -->
@@ -197,35 +197,35 @@ const gyytrl = ref([
 
         </el-col>
         <!-- li2 -->
-        <el-col :span="9"
-                class="col-flex" style="margin-left: -1vh;">
+        <el-col :span="8"
+                class="body-col">
           <!--云才出山-->
-          <div class='template' style="height: 45vh;width: 29vw; ">
+          <div class='template' style="height: 55% ">
             <button-list :title="'云才出山'" :btns="yccsBtns"></button-list>
           </div>
-          <div class='template' style="height: 35vh;width:29vw;">
+          <div class='template' style="height: 35% ">
             <button-list :title="'人力资源产业园服务'" :btns="rlzyBtns"></button-list>
           </div>
         </el-col>
 
         <!-- li3 -->
-        <el-col :span="7"
-                style="height:30vh;margin-left: -4vh;display: flex;flex-direction: column ;justify-items: center;align-items: center;justify-content: space-around">
-          <div class='template3'>
+        <el-col :span="8" class="body-col">
+          <div class='template' style="height: 28%">
             <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
-          <div class='template3' style="margin-top: 4vh">
+          <div class='template' style="height:28%">
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
-          <div class="foot">
-            <img src="/src/assets/btn/gzh.png" style="width:10vh;padding-right: 3vw;"/>
-            <img src="/src/assets/btn/dt.png" style="width:10vh;"/>
-            <img src="/src/assets/btn//text.png" style="height:9vh;margin-top: 1vh"/>
+          <div class="foot" style="height:34%">
+            <img src="/src/assets/btn/gzh.png" style="width:20%"/>
+            <img src="/src/assets/btn/dt.png" style="width:20%"/>
+            <img src="/src/assets/btn//text.png" style="width:50%"/>
+            <text style="color: aliceblue;font-size: 1.6vh;width: 100%">
+              Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
+              <times></times>
+            </text>
           </div>
-          <text style="color: aliceblue;font-size: 1.6vh;width: 32vw;;margin-top: 2vh;">
-            Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
-            <times></times>
-          </text>
+
         </el-col>
 
 
@@ -305,7 +305,7 @@ const gyytrl = ref([
   background-color: #46505a;
   text-align: center;
   align-content: center;
-  position: relative; /* 确保子元素相对于父元素定位 
+  position: relative; /* 确保子元素相对于父元素定位
 
 } */
 
@@ -321,8 +321,7 @@ const gyytrl = ref([
   background-color: #dce6e176;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
-  height: 30vh;
-  
+  width: 95%;
 }
 
 .template3 {
@@ -383,22 +382,22 @@ const gyytrl = ref([
   flex-direction: row;
   flex-wrap: wrap;
   height: 25vh;
-  width: 35vw;
+  width: 95%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);
 }
 
-.col-flex {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  justify-content: space-around;
-}
 
 .foot {
-  margin-top: 8vh;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+flex-wrap: wrap;
+  text-align: center;
+  width: 95%;
 }
 
 
@@ -416,4 +415,34 @@ const gyytrl = ref([
   height: 100%;
   width: 100%;
 }
+
+.body-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-around
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+.el-main-flex {
+  height: 88vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%
+}
+
 </style>
