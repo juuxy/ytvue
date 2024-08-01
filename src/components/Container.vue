@@ -176,8 +176,7 @@ const gyytrl = ref([
           </div>
 
           <!-- 新闻公告 -->
-          <div class='template'
-               style="height: 30%">
+          <div class='template'>
 
 
             <!-- 新闻公告 -->
@@ -186,11 +185,11 @@ const gyytrl = ref([
               公 告
             </el-text>
             <div class="news-info">
-              <p style="width: 75%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
+              <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
               <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>
-              <p style="width: 75%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
+              <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
               <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>
-              <p style="width: 75%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
+              <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
               <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
             </div>
           </div>
@@ -213,14 +212,14 @@ const gyytrl = ref([
           <div class='template' style="height: 28%">
             <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
-          <div class='template' style="height:28%">
-            <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
+          <div class='template' style="height:28%;">
+            <button-list  :title="'关于云投人力'" :btns="gyytrl" ></button-list>
           </div>
           <div class="foot" style="height:34%">
             <img src="/src/assets/btn/gzh.png" style="width:20%"/>
             <img src="/src/assets/btn/dt.png" style="width:20%"/>
             <img src="/src/assets/btn//text.png" style="width:50%"/>
-            <text style="color: aliceblue;font-size: 1.6vh;width: 100%">
+            <text style="color: aliceblue;font-size: 1.55vh;width: 100%">
               Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
               <times></times>
             </text>
@@ -382,7 +381,7 @@ const gyytrl = ref([
   flex-direction: row;
   flex-wrap: wrap;
   height: 25vh;
-  width: 95%;
+  width: 100%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);

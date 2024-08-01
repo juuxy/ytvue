@@ -40,12 +40,12 @@ function handleExternalLink(url) {
 
 }
 
+
 .ico {
   background-color: #394867;
   border-radius: 1.5vh;
-
   width: 18%;
-  margin:  1% 3.5%;
+  margin:  0% 3.5%;
 }
 
 .ico:hover {
@@ -54,7 +54,8 @@ function handleExternalLink(url) {
 
 .imag {
   width: 4.5vh;
-  padding: 0.8vh;
+  height: 6vh;
+  
 }
 
 .desc {
@@ -70,7 +71,7 @@ function handleExternalLink(url) {
   text-align: center;
   font-size: 3vh;
   font-weight: bold;
-  padding: 2vh;
+  padding: 1.5vh;
   color: #283a3fd2;
   width: 88%;
   /* background:linear-gradient(to right,#ffffffc0,#d7e8df00) ; */
