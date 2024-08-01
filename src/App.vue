@@ -2,11 +2,11 @@
 import {ref, onMounted, onUnmounted} from 'vue';
 import Container from "@/components/Container.vue";
 
-import bg1 from '@/assets/background/bg-1.jpg';
-import bg2 from '@/assets/background/bg-2.jpeg';
-import bg3 from '@/assets/background/bg-3.jpg';
-import bg4 from '@/assets/background/bg-4.png';
-import bg5 from '@/assets/background/bg-5.jpeg';
+import bg1 from '@/assets/background/bg1.png';
+import bg2 from '@/assets/background/bg2.png';
+import bg3 from '@/assets/background/bg3.jpg';
+import bg4 from '@/assets/background/bg4.jpg';
+import bg5 from '@/assets/background/bg5.jpg';
 
 const backgroundImages = [bg1, bg2, bg3, bg4, bg5];
 const currentIndex = ref(0);
@@ -28,8 +28,8 @@ onMounted(() => {
       currentIndex.value = nextIndex.value;
       backgroundImage.value = nextBackgroundImage.value;
       opacity.value = 1; // 开始淡入
-    }, 500); // 过渡时间和 CSS transition 保持一致
-  }, 5000); // 每5秒切换一次
+    }, 200); // 过渡时间和 CSS transition 保持一致
+  }, 7000); // 每5秒切换一次
 });
 
 onUnmounted(() => {
@@ -47,31 +47,24 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-html, body {
-  margin: 0;
-  height: 95vh;
-  width: 95vw;
-  font-family: "思源黑体", serif;
-  overflow: hidden;
-}
+
 
 #app {
   height: 100vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
+  margin: 0;
 }
 
 .background-layer {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   /* 避免突兀的白色背景 */
-  background: linear-gradient(to bottom, rgba(114, 166, 90, 0), rgba(0, 0, 0, 0.5)) no-repeat fixed center;
-  transition: opacity 1s ease-in-out; /* 过渡效果 */
+ /* background: linear-gradient(to bottom, rgba(114, 166, 90, 0), rgba(0, 0, 0, 0.5)) no-repeat fixed center;
+  transition: opacity 1s ease-in-out;  过渡效果 */
 }
 
 .container {

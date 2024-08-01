@@ -41,11 +41,12 @@ function handleExternalLink(url) {
 }
 
 .ico {
-  background-color: #394867;
+background-image: linear-gradient(to top, #7ea792be, #fdfdfd6e);
   border-radius: 1.5vh;
-
   width: 18%;
   margin:  1% 3.5%;
+  /* background-image: url('../assets/background/icbg.png'); /* 使用你的图片路径替换这里 */  
+ 
 }
 
 .ico:hover {
@@ -54,7 +55,7 @@ function handleExternalLink(url) {
 
 .imag {
   width: 4.5vh;
-  padding: 0.8vh;
+  height: 6.5vh;
 }
 
 .desc {
@@ -70,10 +71,13 @@ function handleExternalLink(url) {
   text-align: center;
   font-size: 3vh;
   font-weight: bold;
-  padding: 2vh;
-  color: #283a3fd2;
-  width: 88%;
+  padding: 1vh;
+  color: #587064be;
   /* background:linear-gradient(to right,#ffffffc0,#d7e8df00) ; */
   border-top-left-radius: 5vh;
 }
+
+a {  
+  text-decoration: none;  
+}  
 </style>

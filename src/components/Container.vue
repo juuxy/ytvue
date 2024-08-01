@@ -160,24 +160,19 @@ const gyytrl = ref([
       <el-row class="el-main-flex">
         <el-col :span="8"
                 class="body-col">
-          <div class='template' style="height:60%">
-            <el-carousel height="50vh">
-              <el-carousel-item height="50vh">
+          <div class='template' >
+            <el-carousel height="47vh">
+              <el-carousel-item >
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
-              <el-carousel-item height="50vh">
+              <el-carousel-item >
                 <g2-line-ai></g2-line-ai>
               </el-carousel-item>
-
             </el-carousel>
-
-            <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
-            <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
-          </div>
+       </div>
 
           <!-- 新闻公告 -->
-          <div class='template'
-               style="height: 30%">
+          <div class='template'>
 
 
             <!-- 新闻公告 -->
@@ -186,11 +181,11 @@ const gyytrl = ref([
               公 告
             </el-text>
             <div class="news-info">
-              <p style="width: 75%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
+              <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
               <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>
-              <p style="width: 75%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
+              <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
               <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>
-              <p style="width: 75%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
+              <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
               <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
             </div>
           </div>
@@ -220,7 +215,7 @@ const gyytrl = ref([
             <img src="/src/assets/btn/gzh.png" style="width:20%"/>
             <img src="/src/assets/btn/dt.png" style="width:20%"/>
             <img src="/src/assets/btn//text.png" style="width:50%"/>
-            <text style="color: aliceblue;font-size: 1.6vh;width: 100%">
+            <text style="color: aliceblue;font-size: 1.55vh;width: 100%">
               Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
               <times></times>
             </text>
@@ -299,16 +294,6 @@ const gyytrl = ref([
   --el-main-padding: 0.1vh;
 }
 
-/* .el-footer {
-  height: 6vh;
-  width: 100vw;
-  background-color: #46505a;
-  text-align: center;
-  align-content: center;
-  position: relative; /* 确保子元素相对于父元素定位
-
-} */
-
 
 /* li1 */
 .template {
@@ -318,43 +303,14 @@ const gyytrl = ref([
   align-items: center;
   justify-content: space-around;
   border-radius: 5vh;
-  background-color: #dce6e176;
+  background-color: #dce6e196;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
   width: 95%;
 }
 
-.template3 {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 5vh;
-  background-color: #dce6e176;
-  border: #2c3e5031 solid 0.1vw;
-  text-align: center;
-  margin-top: 1vh;
-  width: 29vw;
-  height: 55vh;
 
-}
 
-/* 业务数字大屏 */
-.tem-title {
-  display: inline-block;
-  vertical-align: middle;
-  text-align: left;
-  font-size: 3vh;
-  font-weight: bold;
-  width: 30vw;
-  height: 3vh;
-  padding: 1vh 1.5vw;
-  background: linear-gradient(to right, #ffffffc0, #d7e8df00);
-  border-top-left-radius: 5vh;
-
-  color: #2c3e50;
-}
 
 /* 登录注册 */
 .bt1 {
@@ -362,7 +318,7 @@ const gyytrl = ref([
   height: 6vh;
   font-size: 1.2vw;
   border-radius: 2vh;
-  background-color: #394867;
+  background: linear-gradient(to top, #7ea792ef, #fdfdfd65);
   border: #2c3e50
 }
 
@@ -372,7 +328,7 @@ const gyytrl = ref([
   font-size: 1.2vw;
   border-radius: 2vh;
   background-color: rgba(255, 255, 255, 0.727);
-  color: #394867;
+  color: #587064be;
   border: #2c3e50
 }
 
@@ -382,7 +338,7 @@ const gyytrl = ref([
   flex-direction: row;
   flex-wrap: wrap;
   height: 25vh;
-  width: 95%;
+  width: 100%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);
@@ -422,7 +378,7 @@ flex-wrap: wrap;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  justify-content: space-around
+  justify-content: space-around;
 }
 
 .col-flex {
