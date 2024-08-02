@@ -77,4 +77,7 @@ function handleExternalLink(url) {
   /* background:linear-gradient(to right,#ffffffc0,#d7e8df00) ; */
   border-top-left-radius: 5vh;
 }
+a {  
+  text-decoration: none;  
+}  
 </style>
