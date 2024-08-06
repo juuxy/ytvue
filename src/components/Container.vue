@@ -13,8 +13,114 @@ import px from "@/assets/btn/px02.svg";
 import wbfw from "@/assets/btn/wbfw02.svg";
 import gjrc from "@/assets/btn/gjrc02.svg";
 import rsda from "@/assets/btn/rsda02.svg";
-import jnrd from "@/assets/btn/jnrd02.svg"
+import jnrd from "@/assets/btn/jnrd02.svg";
+import g2Line from '@/components/antv/g2Line.vue';
+import pie from '@/components/antv/pie.vue';
+import chord from '@/components/antv/chord.vue';
 
+const g2Views = [{
+  name: "view1",
+}, {
+  name: "view2",
+}, {
+  name: "view3",
+}, {
+  name: "view4",
+}]
+
+const pieData = [
+  { name: '公司领导', value: 5 },
+  { name: '党群综合部', value: 7 },
+  { name: '财务管理部', value: 10 },
+  { name: '党委', value: 1 },
+  { name: '经营管理部', value: 5 },
+  { name: '纪检风控部', value: 4 },
+  { name: '市场营销中心', value: 3 },
+  { name: '产品服务中心', value: 7 },
+  { name: '业务发展中心', value: 5 },
+];
+
+const pieData2 = [
+  { name: '财务管理类', value: 10 },
+  { name: '纪检类', value: 3 },
+  { name: '党群类', value: 3 },
+  { name: '行政管理类', value: 4 },
+  { name: '人力资源类', value: 4 },
+  { name: '投资管理类', value: 1 },
+  { name: '经营管理类', value: 7 },
+  { name: '市场拓展类', value: 8 },
+  { name: '研发类', value: 0 },
+  { name: '法律合规类', value: 4 },
+  { name: '安全管理类', value: 1 },
+];
+
+const chordData  = [
+  {
+    source: '昆明',
+    target: '曲靖',
+    value: 30,
+  },
+  {
+    source: '昆明',
+    target: '大理',
+    value: 80,
+  },
+  {
+    source: '昆明',
+    target: '丽江',
+    value: 46,
+  },
+  {
+    source: '昆明',
+    target: '红河',
+    value: 49,
+  },
+  {
+    source: '昆明',
+    target: '玉溪',
+    value: 69,
+  },
+  {
+    source: '昆明',
+    target: '保山',
+    value: 19,
+  },
+  {
+    source: '曲靖',
+    target: '红河',
+    value: 62,
+  },
+  {
+    source: '曲靖',
+    target: '玉溪',
+    value: 82,
+  },
+  {
+    source: '曲靖',
+    target: '大理',
+    value: 16,
+  },
+  {
+    source: '大理',
+    target: '玉溪',
+    value: 16,
+  },
+  {
+    source: '丽江',
+    target: '玉溪',
+    value: 76,
+  },
+  {
+    source: '丽江',
+    target: '普洱',
+    value: 24,
+  },
+  {
+    source: '普洱',
+    target: '昆明',
+    value: 32,
+  },
+];
 
 // 云才出山
 const yccsBtns = ref([
@@ -26,17 +132,17 @@ const yccsBtns = ref([
   {
     imageSrc: wbfw,
     desc: '外包服务',
-      url: "https://www.laofa.com/"
+    url: "https://www.laofa.com/"
   },
   {
     imageSrc: gjrc,
     desc: '国际人才',
-      url: "https://www.chuhaiyi.com/zh-CN/"
+    url: "https://www.chuhaiyi.com/zh-CN/"
   },
   {
     imageSrc: rsdl,
     desc: '人事代理',
-      url: "https://www.ysinc.com/product/ruzhitong"
+    url: "https://www.ysinc.com/product/ruzhitong"
   },
   {
     imageSrc: zp,
@@ -46,28 +152,28 @@ const yccsBtns = ref([
   {
     imageSrc: lgsc,
     desc: '零工市场',
-      url: "https://www.linggongbao.com/#/"
+    url: "https://www.linggongbao.com/#/"
   },
   {
     imageSrc: ks,
     desc: '考试服务',
-      url: "http://www.kaoshitong.cn/"
+    url: "http://www.kaoshitong.cn/"
   },
   {
     imageSrc: px,
     desc: '培训服务',
-       url: "http://www.cepingtong.cn/"
+    url: "http://www.cepingtong.cn/"
   },
   {
-    imageSrc:jnrd,
+    imageSrc: jnrd,
     desc: '技能认定',
-       url: "http://www.kaoshitong.cn/"
+    url: "http://www.kaoshitong.cn/"
   },
 
   {
     imageSrc: rsda,
     desc: '人事档案',
-       url: "http://www.beidiaotong.cn/"
+    url: "http://www.beidiaotong.cn/"
 
   }
 
@@ -83,22 +189,22 @@ const rlzyBtns = ref([
   {
     imageSrc: yqgk,
     desc: '园区概况',
-    url:"http://www.ynythr.com/newslist/yqyy.htm"
+    url: "http://www.ynythr.com/newslist/yqyy.htm"
   },
   {
     imageSrc: zs,
     desc: '招商',
-    url:"http://www.ynythr.com/newslist/tspfxs.htm"
+    url: "http://www.ynythr.com/newslist/tspfxs.htm"
   },
   {
     imageSrc: sthb,
     desc: '生态伙伴',
-    url:"http://www.ynythr.com/newslist/zcgg.htm"
+    url: "http://www.ynythr.com/newslist/zcgg.htm"
   },
   {
     imageSrc: yqdt,
     desc: '园区动态',
-    url:"http://www.ynythr.com/newslist/yqyy.htm"
+    url: "http://www.ynythr.com/newslist/yqyy.htm"
   },
   {
     imageSrc: jyxc,
@@ -140,17 +246,17 @@ const gyytrl = ref([
   {
     imageSrc: qyjs,
     desc: '企业介绍',
-    url:"http://www.ynythr.com/newslist/gsjjvd.htm"
+    url: "http://www.ynythr.com/newslist/gsjjvd.htm"
   },
   {
     imageSrc: djyl,
     desc: '党建引领',
-    url:"http://www.ynythr.com/newslist/dqgz.htm"
+    url: "http://www.ynythr.com/newslist/dqgz.htm"
   },
   {
     imageSrc: zgzj,
     desc: '职工之家',
-    url:"https://www.cnyig.com/newslist/ytgh.htm"
+    url: "https://www.cnyig.com/newslist/ytgh.htm"
   },
 
 
@@ -186,7 +292,19 @@ const gyytrl = ref([
               <el-carousel-item height="50vh">
                 <g2-line-ai></g2-line-ai>
               </el-carousel-item>
-
+              <el-carousel-item height="50vh">
+                <pie title="员工分布图" container-id="sadsadsa" :data=pieData class="g2-view" style="width:30%"></pie>
+              </el-carousel-item>
+              <el-carousel-item height="50vh">
+                <g2-line class="g2-view" style="width:60%"></g2-line>
+              </el-carousel-item>
+              <el-carousel-item height="50vh">
+                <pie title="员工人才分类汇总表" container-id="12321" :data=pieData2 class="g2-view"
+                     style="width:30%"></pie>
+              </el-carousel-item>
+              <el-carousel-item height="50vh">
+                <chord title="人员流动表" container-id="333" :data=chordData class="g2-view" style="width:30%"></chord>
+              </el-carousel-item>
             </el-carousel>
 
             <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
@@ -231,7 +349,7 @@ const gyytrl = ref([
             <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
           <div class='template' style="height:28%;">
-            <button-list  :title="'关于云投人力'" :btns="gyytrl" ></button-list>
+            <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
           <div class="foot" style="height:34%">
             <img src="/src/assets/btn/gzh.png" style="width:20%"/>
@@ -412,7 +530,7 @@ const gyytrl = ref([
   justify-items: center;
   align-items: center;
   justify-content: space-between;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   text-align: center;
   width: 95%;
 }

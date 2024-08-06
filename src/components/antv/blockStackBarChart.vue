@@ -86,7 +86,7 @@ onMounted(async () => {
       });
 
   chart.title({title: '云南省人才派遣数据统计', titleFill: '#394867', align: 'center', titleFontSize: 28})
-  chart.render();
+  await chart.render();
 });
 </script>
 
