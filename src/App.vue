@@ -63,8 +63,8 @@ onUnmounted(() => {
   height: 100%;
   background-size: cover;
   /* 避免突兀的白色背景 */
- /* background: linear-gradient(to bottom, rgba(114, 166, 90, 0), rgba(0, 0, 0, 0.5)) no-repeat fixed center;
-  transition: opacity 1s ease-in-out;  过渡效果 */
+ /* background: linear-gradient(to bottom, rgba(114, 166, 90, 0), rgba(0, 0, 0, 0.5)) no-repeat fixed center;*/
+  transition: opacity 1s ease-in-out;/*  过渡效果 */
 }
 
 .container {
