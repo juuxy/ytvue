@@ -13,6 +13,7 @@ import px from "@/assets/btn/px02.svg";
 import wbfw from "@/assets/btn/wbfw02.svg";
 import gjrc from "@/assets/btn/gjrc02.svg";
 import rsda from "@/assets/btn/rsda02.svg";
+import jnrd from "@/assets/btn/jnrd02.svg"
 
 
 // 云才出山
@@ -20,18 +21,22 @@ const yccsBtns = ref([
   {
     imageSrc: rcpq,
     desc: '人才派遣',
+    url: "https://www.hrwork.com/"
   },
   {
     imageSrc: wbfw,
     desc: '外包服务',
+      url: "https://www.laofa.com/"
   },
   {
     imageSrc: gjrc,
     desc: '国际人才',
+      url: "https://www.chuhaiyi.com/zh-CN/"
   },
   {
     imageSrc: rsdl,
     desc: '人事代理',
+      url: "https://www.ysinc.com/product/ruzhitong"
   },
   {
     imageSrc: zp,
@@ -41,23 +46,29 @@ const yccsBtns = ref([
   {
     imageSrc: lgsc,
     desc: '零工市场',
+      url: "https://www.linggongbao.com/#/"
   },
   {
     imageSrc: ks,
     desc: '考试服务',
+      url: "http://www.kaoshitong.cn/"
   },
   {
     imageSrc: px,
     desc: '培训服务',
+       url: "http://www.cepingtong.cn/"
   },
   {
-    imageSrc: rsdl,
-    desc: '人事代理',
+    imageSrc:jnrd,
+    desc: '技能认定',
+       url: "http://www.kaoshitong.cn/"
   },
 
   {
     imageSrc: rsda,
-    desc: '人事档案'
+    desc: '人事档案',
+       url: "http://www.beidiaotong.cn/"
+
   }
 
 ]);
@@ -72,18 +83,22 @@ const rlzyBtns = ref([
   {
     imageSrc: yqgk,
     desc: '园区概况',
+    url:"http://www.ynythr.com/newslist/yqyy.htm"
   },
   {
     imageSrc: zs,
     desc: '招商',
+    url:"http://www.ynythr.com/newslist/tspfxs.htm"
   },
   {
     imageSrc: sthb,
     desc: '生态伙伴',
+    url:"http://www.ynythr.com/newslist/zcgg.htm"
   },
   {
     imageSrc: yqdt,
     desc: '园区动态',
+    url:"http://www.ynythr.com/newslist/yqyy.htm"
   },
   {
     imageSrc: jyxc,
@@ -125,14 +140,17 @@ const gyytrl = ref([
   {
     imageSrc: qyjs,
     desc: '企业介绍',
+    url:"http://www.ynythr.com/newslist/gsjjvd.htm"
   },
   {
     imageSrc: djyl,
     desc: '党建引领',
+    url:"http://www.ynythr.com/newslist/dqgz.htm"
   },
   {
     imageSrc: zgzj,
     desc: '职工之家',
+    url:"https://www.cnyig.com/newslist/ytgh.htm"
   },
 
 
