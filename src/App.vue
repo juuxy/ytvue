@@ -2,13 +2,13 @@
 import {ref, onMounted, onUnmounted} from 'vue';
 import Container from "@/components/Container.vue";
 
-import bg1 from '@/assets/background/bg1.png';
+// import bg1 from '@/assets/background/bg1.png';
 import bg2 from '@/assets/background/bg2.png';
 import bg3 from '@/assets/background/bg3.jpg';
-import bg4 from '@/assets/background/bg4.jpg';
-import bg5 from '@/assets/background/bg5.jpg';
+// import bg4 from '@/assets/background/bg4.jpg';
+// import bg5 from '@/assets/background/bg5.jpg';
 
-const backgroundImages = [bg1, bg2, bg3, bg4, bg5];
+const backgroundImages = [ bg2, bg3];
 const currentIndex = ref(0);
 const nextIndex = ref(1);
 

@@ -41,12 +41,12 @@ function handleExternalLink(url) {
 }
 
 .ico {
-background-image: linear-gradient(to top, #7ea792be, #fdfdfd6e);
+/* background-image: linear-gradient(to top, #6e917f, #fdfdfd); */
   border-radius: 1.5vh;
   width: 18%;
   margin:  1% 3.5%;
-  /* background-image: url('../assets/background/icbg.png'); /* 使用你的图片路径替换这里 */  
- 
+background-image: url('../assets/background/btbg03.jpg'); 
+opacity: 0.55;
 }
 
 .ico:hover {

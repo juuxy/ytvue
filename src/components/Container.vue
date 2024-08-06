@@ -135,6 +135,9 @@ import djyl from "@/assets/btn/djyl02.svg";
 import zgzj from "@/assets/btn/zgzj02.svg";
 import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
 import G2LineAi from "@/components/antv/g2LineAi.vue";
+import G2Line from "@/components/antv/g2Line.vue";
+import Chord from "@/components/antv/chord.vue";
+import Pie from "@/components/antv/pie.vue";
 
 const gyytrl = ref([
   {
@@ -180,12 +183,21 @@ const gyytrl = ref([
                 class="body-col">
           <div class='template' >
             <el-carousel height="47vh">
-              <el-carousel-item >
+              <!-- <el-carousel-item >
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
               <el-carousel-item >
                 <g2-line-ai></g2-line-ai>
+              </el-carousel-item> -->
+              <el-carousel-item >
+                <g2-line></g2-line>
               </el-carousel-item>
+              <!-- <el-carousel-item >
+                <chord></chord>
+              </el-carousel-item>
+              <el-carousel-item >
+                <pie></pie>
+              </el-carousel-item> -->
             </el-carousel>
        </div>
 
@@ -195,7 +207,7 @@ const gyytrl = ref([
 
             <!-- 新闻公告 -->
             <el-text
-                style="font-size: 3vh;text-align: left;font-weight: bold;color:black;">
+                style="font-size: 3vh;text-align: left;font-weight: bold;color:black;color:#426169d2">
               公 告
             </el-text>
             <div class="news-info">
@@ -321,7 +333,7 @@ const gyytrl = ref([
   align-items: center;
   justify-content: space-around;
   border-radius: 5vh;
-  background-color: #dce6e196;
+  background-color: #ffffff6c;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
   width: 95%;
@@ -360,6 +372,7 @@ const gyytrl = ref([
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);
+  color:#426169d2
 }
 
 
