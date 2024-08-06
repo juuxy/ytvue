@@ -40,13 +40,11 @@ function handleExternalLink(url) {
 
 }
 
-.ico {
-/* background-image: linear-gradient(to top, #6e917f, #fdfdfd); */
+.ico{
+background-image: linear-gradient(to top,#58706494, #fdfdfd91);
   border-radius: 1.5vh;
   width: 18%;
   margin:  1% 3.5%;
-background-image: url('../assets/background/btbg03.jpg'); 
-opacity: 0.55;
 }
 
 .ico:hover {
@@ -59,7 +57,7 @@ opacity: 0.55;
 }
 
 .desc {
-  color: aliceblue;
+  color: #50645a;
   margin-top: 0vh;
   font-size: 1.6vh
 
@@ -72,7 +70,7 @@ opacity: 0.55;
   font-size: 3vh;
   font-weight: bold;
   padding: 1vh;
-  color: #587064be;
+  color: #587064;
   /* background:linear-gradient(to right,#ffffffc0,#d7e8df00) ; */
   border-top-left-radius: 5vh;
 }

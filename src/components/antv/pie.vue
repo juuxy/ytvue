@@ -29,15 +29,15 @@ onMounted(() => {
       .encode('y', 'value')
       .encode('color', 'name')
       .scale('color', {
-        range: ['rgb(86,214,251)', 'rgb(69, 147, 254)', 'rgb(134, 254, 193)', 'rgb(246, 216, 96)', 'rgb(248 , 115, 120)'],
+        range: ['#a1b764', '#52682b', '#d4dfbc', '#ffffff', '#6f8379'],
       })
       .label({
         text: 'value',
         fontWeight: 'bold',
-        offset: 40,
-        fontSize: 16, // 调整字体大小
+        offset: 50,
+        fontSize: 18, // 调整字体大小
         style: {
-          fill: 'rgb(42,193,157)',
+          fill: '#587064be',
         },
       })
 
@@ -54,7 +54,7 @@ onMounted(() => {
         },
         position: 'bottom',
       });
-  chart.title({title: props.title, titleFill: 'rgb(255,255,255)', align: 'center', titleFontSize: 28})
+  chart.title({title: props.title, titleFill: '#587064', align: 'center', titleFontSize: 28})
   chart.render();
 });
 

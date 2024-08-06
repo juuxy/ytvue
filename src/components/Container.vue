@@ -4,17 +4,123 @@ import ButtonList from "@/components/buttonList.vue";
 import times from "@/components/antv/getdate.vue"
 import UnderMap from "@/components/underMap.vue";
 import {ref} from "vue";
-import rcpq from "@/assets/btn/rcpq02.svg";
-import rsdl from "@/assets/btn/rsdl01.svg";
-import ks from "@/assets/btn/ks02.svg";
-import lgsc from "@/assets/btn/lgsc02.svg";
-import zp from "@/assets/btn/zp02.svg";
-import px from "@/assets/btn/px02.svg";
-import wbfw from "@/assets/btn/wbfw02.svg";
-import gjrc from "@/assets/btn/gjrc02.svg";
-import rsda from "@/assets/btn/rsda02.svg";
-import jnrd from "@/assets/btn/jnrd02.svg"
+import rcpq from "@/assets/btn/rcpq03.svg";
+import rsdl from "@/assets/btn/rsgl.svg";
+import ks from "@/assets/btn/ksfw.svg";
+import lgsc from "@/assets/btn/lgsc.svg";
+import zp from "@/assets/btn/zp.svg";
+import px from "@/assets/btn/px.svg";
+import wbfw from "@/assets/btn/wbfw.svg";
+import gjrc from "@/assets/btn/gjrc.svg";
+import rsda from "@/assets/btn/rsda.svg";
+import jnrd from "@/assets/btn/jnrd.svg";
+import g2Line from '@/components/antv/g2Line.vue';
+import pie from '@/components/antv/pie.vue';
+import chord from '@/components/antv/chord.vue';
 
+const g2Views = [{
+  name: "view1",
+}, {
+  name: "view2",
+}, {
+  name: "view3",
+}, {
+  name: "view4",
+}]
+
+const pieData = [
+  { name: '公司领导', value: 5 },
+  { name: '党群综合部', value: 7 },
+  { name: '财务管理部', value: 10 },
+  { name: '党委', value: 1 },
+  { name: '经营管理部', value: 5 },
+  { name: '纪检风控部', value: 4 },
+  { name: '市场营销中心', value: 3 },
+  { name: '产品服务中心', value: 7 },
+  { name: '业务发展中心', value: 5 },
+];
+
+const pieData2 = [
+  { name: '财务管理类', value: 10 },
+  { name: '纪检类', value: 3 },
+  { name: '党群类', value: 3 },
+  { name: '行政管理类', value: 4 },
+  { name: '人力资源类', value: 4 },
+  { name: '投资管理类', value: 1 },
+  { name: '经营管理类', value: 7 },
+  { name: '市场拓展类', value: 8 },
+  { name: '研发类', value: 0 },
+  { name: '法律合规类', value: 4 },
+  { name: '安全管理类', value: 1 },
+];
+
+const chordData  = [
+  {
+    source: '昆明',
+    target: '曲靖',
+    value: 30,
+  },
+  {
+    source: '昆明',
+    target: '大理',
+    value: 80,
+  },
+  {
+    source: '昆明',
+    target: '丽江',
+    value: 46,
+  },
+  {
+    source: '昆明',
+    target: '红河',
+    value: 49,
+  },
+  {
+    source: '昆明',
+    target: '玉溪',
+    value: 69,
+  },
+  {
+    source: '昆明',
+    target: '保山',
+    value: 19,
+  },
+  {
+    source: '曲靖',
+    target: '红河',
+    value: 62,
+  },
+  {
+    source: '曲靖',
+    target: '玉溪',
+    value: 82,
+  },
+  {
+    source: '曲靖',
+    target: '大理',
+    value: 16,
+  },
+  {
+    source: '大理',
+    target: '玉溪',
+    value: 16,
+  },
+  {
+    source: '丽江',
+    target: '玉溪',
+    value: 76,
+  },
+  {
+    source: '丽江',
+    target: '普洱',
+    value: 24,
+  },
+  {
+    source: '普洱',
+    target: '昆明',
+    value: 32,
+  },
+];
 
 // 云才出山
 const yccsBtns = ref([
@@ -26,17 +132,17 @@ const yccsBtns = ref([
   {
     imageSrc: wbfw,
     desc: '外包服务',
-      url: "https://www.laofa.com/"
+    url: "https://www.laofa.com/"
   },
   {
     imageSrc: gjrc,
     desc: '国际人才',
-      url: "https://www.chuhaiyi.com/zh-CN/"
+    url: "https://www.chuhaiyi.com/zh-CN/"
   },
   {
     imageSrc: rsdl,
     desc: '人事代理',
-      url: "https://www.ysinc.com/product/ruzhitong"
+    url: "https://www.ysinc.com/product/ruzhitong"
   },
   {
     imageSrc: zp,
@@ -46,59 +152,59 @@ const yccsBtns = ref([
   {
     imageSrc: lgsc,
     desc: '零工市场',
-      url: "https://www.linggongbao.com/#/"
+    url: "https://www.linggongbao.com/#/"
   },
   {
     imageSrc: ks,
     desc: '考试服务',
-      url: "http://www.kaoshitong.cn/"
+    url: "http://www.kaoshitong.cn/"
   },
   {
     imageSrc: px,
     desc: '培训服务',
-       url: "http://www.cepingtong.cn/"
+    url: "http://www.cepingtong.cn/"
   },
   {
-    imageSrc:jnrd,
+    imageSrc: jnrd,
     desc: '技能认定',
-       url: "http://www.kaoshitong.cn/"
+    url: "http://www.kaoshitong.cn/"
   },
 
   {
     imageSrc: rsda,
     desc: '人事档案',
-       url: "http://www.beidiaotong.cn/"
+    url: "http://www.beidiaotong.cn/"
 
   }
 
 ]);
 
-import yqgk from "@/assets/btn/yqgk02.svg";
-import zs from "@/assets/btn/zs02.svg";
-import sthb from "@/assets/btn/sthb02.svg";
-import yqdt from "@/assets/btn/yqdt02.svg";
-import jyxc from "@/assets/btn/jyxc02.svg";
+import yqgk from "@/assets/btn/yqgk.svg";
+import zs from "@/assets/btn/zs.svg";
+import sthb from "@/assets/btn/sthb.svg";
+import yqdt from "@/assets/btn/yqdt.svg";
+import jyxc from "@/assets/btn/jyxc.svg";
 // 人力资源产业园
 const rlzyBtns = ref([
   {
     imageSrc: yqgk,
     desc: '园区概况',
-    url:"http://www.ynythr.com/newslist/yqyy.htm"
+    url: "http://www.ynythr.com/newslist/yqyy.htm"
   },
   {
     imageSrc: zs,
     desc: '招商',
-    url:"http://www.ynythr.com/newslist/tspfxs.htm"
+    url: "http://www.ynythr.com/newslist/tspfxs.htm"
   },
   {
     imageSrc: sthb,
     desc: '生态伙伴',
-    url:"http://www.ynythr.com/newslist/zcgg.htm"
+    url: "http://www.ynythr.com/newslist/zcgg.htm"
   },
   {
     imageSrc: yqdt,
     desc: '园区动态',
-    url:"http://www.ynythr.com/newslist/yqyy.htm"
+    url: "http://www.ynythr.com/newslist/yqyy.htm"
   },
   {
     imageSrc: jyxc,
@@ -106,10 +212,10 @@ const rlzyBtns = ref([
   },
 ])
 
-import zbyw from "@/assets/btn/zbyw02.svg";
-import wljs from "@/assets/btn/wljs02.svg";
-import fycc from "@/assets/btn/fycc02.svg";
-import chwl from "@/assets/btn/chwl02.svg";
+import zbyw from "@/assets/btn/zbyw.svg";
+import wljs from "@/assets/btn/wljs.svg";
+import fycc from "@/assets/btn/fycc.svg";
+import chwl from "@/assets/btn/chwl.svg";
 // y云品出滇
 const ypcd = ref([
   {
@@ -130,30 +236,27 @@ const ypcd = ref([
   },
 
 ])
-import qyjs from "@/assets/btn/qyjs02.svg";
-import djyl from "@/assets/btn/djyl02.svg";
-import zgzj from "@/assets/btn/zgzj02.svg";
+import qyjs from "@/assets/btn/qyjs.svg";
+import djyl from "@/assets/btn/djyl.svg";
+import zgzj from "@/assets/btn/zgzj.svg";
 import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
 import G2LineAi from "@/components/antv/g2LineAi.vue";
-import G2Line from "@/components/antv/g2Line.vue";
-import Chord from "@/components/antv/chord.vue";
-import Pie from "@/components/antv/pie.vue";
 
 const gyytrl = ref([
   {
     imageSrc: qyjs,
     desc: '企业介绍',
-    url:"http://www.ynythr.com/newslist/gsjjvd.htm"
+    url: "http://www.ynythr.com/newslist/gsjjvd.htm"
   },
   {
     imageSrc: djyl,
     desc: '党建引领',
-    url:"http://www.ynythr.com/newslist/dqgz.htm"
+    url: "http://www.ynythr.com/newslist/dqgz.htm"
   },
   {
     imageSrc: zgzj,
     desc: '职工之家',
-    url:"https://www.cnyig.com/newslist/ytgh.htm"
+    url: "https://www.cnyig.com/newslist/ytgh.htm"
   },
 
 
@@ -172,7 +275,7 @@ const gyytrl = ref([
       <div class="placeholder" style="flex: 1;"></div>
       <div
           style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
-        <el-button class="bt1" type="primary">企业登录/注册</el-button>
+        <el-button class="bt1" t>企业登录/注册</el-button>
         <el-button class="bt2" type="primary">个人登录/注册</el-button>
       </div>
     </el-header>
@@ -181,25 +284,32 @@ const gyytrl = ref([
       <el-row class="el-main-flex">
         <el-col :span="8"
                 class="body-col">
-          <div class='template' >
-            <el-carousel height="47vh">
-              <!-- <el-carousel-item >
+          <div class='template' style="height:60%">
+            <el-carousel height="50vh">
+              <el-carousel-item height="50vh">
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
-              <el-carousel-item >
+              <el-carousel-item height="50vh">
                 <g2-line-ai></g2-line-ai>
-              </el-carousel-item> -->
+              </el-carousel-item> 
               <el-carousel-item >
-                <g2-line></g2-line>
+                <pie title="员工分布图" container-id="sadsadsa" :data=pieData class="g2-view" style="width:100%"></pie>
               </el-carousel-item>
-              <!-- <el-carousel-item >
-                <chord></chord>
+               <el-carousel-item height="50vh">
+                <g2-line class="g2-view" style="width:100%"></g2-line>
               </el-carousel-item>
-              <el-carousel-item >
-                <pie></pie>
-              </el-carousel-item> -->
+              <el-carousel-item height="50vh">
+                <pie title="员工人才分类汇总表" container-id="12321" :data=pieData2 class="g2-view"
+                     style="width:100%"></pie>
+              </el-carousel-item>
+              <el-carousel-item height="50vh">
+                <chord title="人员流动表" container-id="333" :data=chordData class="g2-view" style="width:100%"></chord>
+              </el-carousel-item>
             </el-carousel>
-       </div>
+
+            <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
+            <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
+          </div>
 
           <!-- 新闻公告 -->
           <div class='template'>
@@ -207,7 +317,7 @@ const gyytrl = ref([
 
             <!-- 新闻公告 -->
             <el-text
-                style="font-size: 3vh;text-align: left;font-weight: bold;color:black;color:#426169d2">
+                style="font-size: 3vh;text-align: left;font-weight: bold;color:#587064;">
               公 告
             </el-text>
             <div class="news-info">
@@ -238,7 +348,7 @@ const gyytrl = ref([
           <div class='template' style="height: 28%">
             <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
-          <div class='template' style="height:28%">
+          <div class='template' style="height:28%;">
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
           <div class="foot" style="height:34%">
@@ -324,6 +434,16 @@ const gyytrl = ref([
   --el-main-padding: 0.1vh;
 }
 
+/* .el-footer {
+  height: 6vh;
+  width: 100vw;
+  background-color: #46505a;
+  text-align: center;
+  align-content: center;
+  position: relative; /* 确保子元素相对于父元素定位
+
+} */
+
 
 /* li1 */
 .template {
@@ -333,14 +453,43 @@ const gyytrl = ref([
   align-items: center;
   justify-content: space-around;
   border-radius: 5vh;
-  background-color: #ffffff6c;
+  background-color: #dce6e176;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
   width: 95%;
 }
 
+.template3 {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5vh;
+  background-color: #dce6e176;
+  border: #2c3e5031 solid 0.1vw;
+  text-align: center;
+  margin-top: 1vh;
+  width: 29vw;
+  height: 55vh;
 
+}
 
+/* 业务数字大屏 */
+.tem-title {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 3vh;
+  font-weight: bold;
+  width: 30vw;
+  height: 3vh;
+  padding: 1vh 1.5vw;
+  background: linear-gradient(to right, #ffffffc0, #d7e8df00);
+  border-top-left-radius: 5vh;
+
+  color: #2c3e50;
+}
 
 /* 登录注册 */
 .bt1 {
@@ -348,8 +497,9 @@ const gyytrl = ref([
   height: 6vh;
   font-size: 1.2vw;
   border-radius: 2vh;
-  background: linear-gradient(to top, #7ea792ef, #fdfdfd65);
-  border: #2c3e50
+  background-image: linear-gradient(to top,#587064b6, #fdfdfd1c);
+  color:#426169;
+  border: #2c3e50;
 }
 
 .bt2 {
@@ -358,7 +508,7 @@ const gyytrl = ref([
   font-size: 1.2vw;
   border-radius: 2vh;
   background-color: rgba(255, 255, 255, 0.727);
-  color: #587064be;
+  color: #426169;
   border: #2c3e50
 }
 
@@ -367,12 +517,12 @@ const gyytrl = ref([
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 25vh;
+  height: 23vh;
   width: 100%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);
-  color:#426169d2
+  color: #587064;
 }
 
 
@@ -382,7 +532,7 @@ const gyytrl = ref([
   justify-items: center;
   align-items: center;
   justify-content: space-between;
-flex-wrap: wrap;
+  flex-wrap: wrap;
   text-align: center;
   width: 95%;
 }
@@ -409,7 +559,7 @@ flex-wrap: wrap;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-around
 }
 
 .col-flex {

@@ -61,7 +61,7 @@ onMounted(async () => {
       .transform({ type: 'dodgeX' })
       .interaction('elementHighlight', { background: true })
       .scale('color', {
-        range: ['rgba(57, 72, 103, 0.79)', 'rgba(255, 255, 255, 0.9)'],
+        range: ['#587064de', 'rgba(255, 255, 255, 0.9)'],
       })
       .axis('y', {
         label: {
@@ -85,7 +85,7 @@ onMounted(async () => {
         labelFormatter: (datum) => (datum === 'worker' ? '派出' : '召回'),
       });
 
-  chart.title({title: '云南省人才派遣数据统计', titleFill: '#394867', align: 'center', titleFontSize: 28})
+  chart.title({title: '云南省人才派遣数据统计', titleFill: '#587064', align: 'center', titleFontSize: 28})
   chart.render();
 });
 </script>

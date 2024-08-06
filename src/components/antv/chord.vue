@@ -30,7 +30,7 @@ onMounted(() => {
       .scale('color', { range: schemeTableau10 })
       .style('labelFontSize', 15)
       .style('linkFillOpacity', 0.6);
-  chart.title({title: props.title, titleFill: 'rgb(255,255,255)', align: 'center', titleFontSize: 28})
+  chart.title({title: props.title, titleFill: '#587064be', align: 'center', titleFontSize: 28})
   chart.render();
 });
 
