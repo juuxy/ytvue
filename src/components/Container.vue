@@ -221,9 +221,11 @@ const rlzyBtns = ref([
 const news = ref([
   { title: "云投人力成为工业和信息化部人...", date: "2024-07-07" },
   { title: "云南省2024年度灵活结业人员...", date: "2024-07-11" },
+  { title: "云投人力和云南工商学院经管...", date: "2024-01-09" },
+  { title: "昆明智能会议室随租随用", date: "2024-06-27" },
+  { title: "云南省2024年度灵活就业人员...", date: "2024-07-04" },
+  { title: "云投人力与深圳市怡亚通供应链...", date: "2024-07-11" },
   { title: "园区经济筑基赋能|云投中心B3...", date: "2024-07-11" },
-  { title: "园区经济筑基赋能|云投中心B2...", date: "2024-07-11" },
-  { title: "园区经济筑基赋能|云投中心B1...", date: "2024-07-11" }
 ]);
 
 const startIndex = ref(0);
@@ -306,8 +308,8 @@ const gyytrl = ref([
       <div class="placeholder" style="flex: 1;"></div>
       <div
           style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
-        <el-button class="bt1" t>企业登录/注册</el-button>
-        <el-button class="bt2" type="primary">个人登录/注册</el-button>
+        <el-button class="bt1" >企业登录/注册</el-button>
+        <el-button class="bt2">个人登录/注册</el-button>
       </div>
     </el-header>
     <el-main class="el-main-flex">
@@ -315,18 +317,20 @@ const gyytrl = ref([
       <el-row class="el-main-flex">
         <el-col :span="8"
                 class="body-col">
-          <div class='template' style="height:60%">
+          
+                <div class='template' style="height:60%">
             <el-carousel height="50vh">
+              <a href="https://www.ynhrkf.com/datav/" target="_blank"> 
               <el-carousel-item height="50vh">
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
               <el-carousel-item height="50vh">
                 <g2-line-ai></g2-line-ai>
-              </el-carousel-item>
-              <el-carousel-item>
+              </el-carousel-item> 
+              <el-carousel-item >
                 <pie title="员工分布图" container-id="sadsadsa" :data=pieData class="g2-view" style="width:100%"></pie>
               </el-carousel-item>
-              <el-carousel-item height="50vh">
+               <el-carousel-item height="50vh">
                 <g2-line class="g2-view" style="width:100%"></g2-line>
               </el-carousel-item>
               <el-carousel-item height="50vh">
@@ -336,10 +340,12 @@ const gyytrl = ref([
               <el-carousel-item height="50vh">
                 <chord title="人员流动表" container-id="333" :data=chordData class="g2-view" style="width:100%"></chord>
               </el-carousel-item>
+            </a>
             </el-carousel>
 
             <!--            <el-text type="primary" tag="p" class="tem-title">业务数字大屏</el-text>-->
             <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
+        
           </div>
 
           <!-- 新闻公告 -->
@@ -391,7 +397,7 @@ const gyytrl = ref([
           <div class="foot" style="height:34%">
             <img src="/src/assets/btn/gzh.png" style="width:20%"/>
             <img src="/src/assets/btn/dt.png" style="width:20%"/>
-            <img src="/src/assets/btn//text.png" style="width:50%"/>
+            <img src="/src/assets/btn/sologan02.png" style="width:50%"/>
             <text style="color: aliceblue;font-size: 1.55vh;width: 100%">
               Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
               <times></times>
@@ -534,9 +540,8 @@ const gyytrl = ref([
   height: 6vh;
   font-size: 1.2vw;
   border-radius: 2vh;
-  background-image: linear-gradient(to top, #587064b6, #fdfdfd1c);
+  background-image: linear-gradient(to top, #5870645a, #fdfdfd1c);
   color: #426169;
-  border: #2c3e50;
 }
 
 .bt2 {
@@ -546,7 +551,6 @@ const gyytrl = ref([
   border-radius: 2vh;
   background-color: rgba(255, 255, 255, 0.727);
   color: #426169;
-  border: #2c3e50
 }
 
 /* 公告表单 */
@@ -554,7 +558,7 @@ const gyytrl = ref([
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 23vh;
+  height: 27vh;
   width: 100%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
@@ -568,6 +572,7 @@ const gyytrl = ref([
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
+
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);

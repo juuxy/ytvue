@@ -41,14 +41,14 @@ function handleExternalLink(url) {
 }
 
 .ico{
-background-image: linear-gradient(to top,#58706494, #fdfdfd91);
+/* background-image: linear-gradient(to top,#58706494, #fdfdfd91); */
   border-radius: 1.5vh;
   width: 18%;
   margin:  1% 3.5%;
 }
 
 .ico:hover {
-  background-color: #39486751;
+  background-color: #eaecf195;
 }
 
 .imag {
