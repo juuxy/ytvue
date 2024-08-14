@@ -3,7 +3,7 @@
 import ButtonList from "@/components/buttonList.vue";
 import times from "@/components/antv/getdate.vue"
 import UnderMap from "@/components/underMap.vue";
-import {ref} from "vue";
+import {computed, ref} from "vue";
 import rcpq from "@/assets/btn/rcpq03.svg";
 import rsdl from "@/assets/btn/rsgl.svg";
 import ks from "@/assets/btn/ksfw.svg";
@@ -29,32 +29,32 @@ const g2Views = [{
 }]
 
 const pieData = [
-  { name: '公司领导', value: 5 },
-  { name: '党群综合部', value: 7 },
-  { name: '财务管理部', value: 10 },
-  { name: '党委', value: 1 },
-  { name: '经营管理部', value: 5 },
-  { name: '纪检风控部', value: 4 },
-  { name: '市场营销中心', value: 3 },
-  { name: '产品服务中心', value: 7 },
-  { name: '业务发展中心', value: 5 },
+  {name: '公司领导', value: 5},
+  {name: '党群综合部', value: 7},
+  {name: '财务管理部', value: 10},
+  {name: '党委', value: 1},
+  {name: '经营管理部', value: 5},
+  {name: '纪检风控部', value: 4},
+  {name: '市场营销中心', value: 3},
+  {name: '产品服务中心', value: 7},
+  {name: '业务发展中心', value: 5},
 ];
 
 const pieData2 = [
-  { name: '财务管理类', value: 10 },
-  { name: '纪检类', value: 3 },
-  { name: '党群类', value: 3 },
-  { name: '行政管理类', value: 4 },
-  { name: '人力资源类', value: 4 },
-  { name: '投资管理类', value: 1 },
-  { name: '经营管理类', value: 7 },
-  { name: '市场拓展类', value: 8 },
-  { name: '研发类', value: 0 },
-  { name: '法律合规类', value: 4 },
-  { name: '安全管理类', value: 1 },
+  {name: '财务管理类', value: 10},
+  {name: '纪检类', value: 3},
+  {name: '党群类', value: 3},
+  {name: '行政管理类', value: 4},
+  {name: '人力资源类', value: 4},
+  {name: '投资管理类', value: 1},
+  {name: '经营管理类', value: 7},
+  {name: '市场拓展类', value: 8},
+  {name: '研发类', value: 0},
+  {name: '法律合规类', value: 4},
+  {name: '安全管理类', value: 1},
 ];
 
-const chordData  = [
+const chordData = [
   {
     source: '昆明',
     target: '曲靖',
@@ -212,6 +212,37 @@ const rlzyBtns = ref([
   },
 ])
 
+//     <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
+// <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>
+//     <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
+// <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>
+//     <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
+// <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
+const news = ref([
+  { title: "云投人力成为工业和信息化部人...", date: "2024-07-07" },
+  { title: "云南省2024年度灵活结业人员...", date: "2024-07-11" },
+  { title: "园区经济筑基赋能|云投中心B3...", date: "2024-07-11" },
+  { title: "园区经济筑基赋能|云投中心B2...", date: "2024-07-11" },
+  { title: "园区经济筑基赋能|云投中心B1...", date: "2024-07-11" }
+]);
+
+const startIndex = ref(0);
+
+// 动态计算当前显示的新闻条目，确保始终有 3 个条目
+const currentNews = computed(() => {
+  const totalItems = news.value.length;
+  return [
+    news.value[startIndex.value % totalItems],
+    news.value[(startIndex.value + 1) % totalItems],
+    news.value[(startIndex.value + 2) % totalItems]
+  ];
+});
+
+// 定时切换新闻条目
+setInterval(() => {
+  startIndex.value = (startIndex.value + 1) % news.value.length;
+}, 1500);
+
 import zbyw from "@/assets/btn/zbyw.svg";
 import wljs from "@/assets/btn/wljs.svg";
 import fycc from "@/assets/btn/fycc.svg";
@@ -291,11 +322,11 @@ const gyytrl = ref([
               </el-carousel-item>
               <el-carousel-item height="50vh">
                 <g2-line-ai></g2-line-ai>
-              </el-carousel-item> 
-              <el-carousel-item >
+              </el-carousel-item>
+              <el-carousel-item>
                 <pie title="员工分布图" container-id="sadsadsa" :data=pieData class="g2-view" style="width:100%"></pie>
               </el-carousel-item>
-               <el-carousel-item height="50vh">
+              <el-carousel-item height="50vh">
                 <g2-line class="g2-view" style="width:100%"></g2-line>
               </el-carousel-item>
               <el-carousel-item height="50vh">
@@ -320,13 +351,19 @@ const gyytrl = ref([
                 style="font-size: 3vh;text-align: left;font-weight: bold;color:#587064;">
               公 告
             </el-text>
+<!--            <div class="news-info">-->
+<!--              <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>-->
+<!--              <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>-->
+<!--              <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>-->
+<!--              <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>-->
+<!--              <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>-->
+<!--              <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>-->
+<!--            </div>-->
             <div class="news-info">
-              <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
-              <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>
-              <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
-              <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>
-              <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
-              <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
+              <div v-for="(item, index) in currentNews" :key="index" class="news-item">
+                <p style="width: 70%;font-size: 1.2vw">{{ item.title }}</p>
+                <p style="width: 25%;font-size: 1.2vw">{{ item.date }}</p>
+              </div>
             </div>
           </div>
 
@@ -497,8 +534,8 @@ const gyytrl = ref([
   height: 6vh;
   font-size: 1.2vw;
   border-radius: 2vh;
-  background-image: linear-gradient(to top,#587064b6, #fdfdfd1c);
-  color:#426169;
+  background-image: linear-gradient(to top, #587064b6, #fdfdfd1c);
+  color: #426169;
   border: #2c3e50;
 }
 
@@ -515,9 +552,21 @@ const gyytrl = ref([
 /* 公告表单 */
 .news-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   height: 23vh;
+  width: 100%;
+  border-bottom-right-radius: 5vh;
+  border-bottom-left-radius: 5vh;
+  background-color: rgba(230, 231, 232, 0.864);
+  color: #587064;
+}
+
+/* 公告表单 */
+.news-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   width: 100%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
