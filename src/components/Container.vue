@@ -395,13 +395,13 @@ const gyytrl = ref([
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
           <div class="foot" style="height:34%">
-            <img src="/src/assets/btn/gzh.png" style="width:20%"/>
-            <img src="/src/assets/btn/dt.png" style="width:20%"/>
-            <img src="/src/assets/btn/sologan02.png" style="width:50%"/>
-            <text style="color: aliceblue;font-size: 1.55vh;width: 100%">
+            <img src="/src/assets/btn/gzh.png" style="width:25%;margin-left: 60%"/>
+            <!--<img src="/src/assets/btn/dt.png" style="width:20%"/> -->
+            <!-- <img src="/src/assets/btn/sologan02.png" style="width:50%;margin-left: 45%;"/> -->
+            <!-- <text style="color: aliceblue;font-size: 1.55vh;width: 100%">
               Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
               <times></times>
-            </text>
+            </text> -->
           </div>
 
         </el-col>
@@ -558,11 +558,11 @@ const gyytrl = ref([
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 27vh;
+  height: 26vh;
   width: 100%;
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
-  background-color: rgba(230, 231, 232, 0.864);
+  background-color: rgba(230, 231, 232, 0.914);
   color: #587064;
 }
 
