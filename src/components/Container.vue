@@ -395,9 +395,9 @@ const gyytrl = ref([
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
           <div class="foot" style="height:34%">
-            <img src="/src/assets/btn/gzh.png" style="width:25%;margin-left: 60%"/>
-            <!--<img src="/src/assets/btn/dt.png" style="width:20%"/> -->
-            <!-- <img src="/src/assets/btn/sologan02.png" style="width:50%;margin-left: 45%;"/> -->
+            <!--<img src="/src/assets/btn/gzh.png" style="width:25%;margin-left: 60%"/>
+            <img src="/src/assets/btn/dt.png" style="width:20%"/> -->
+            <img src="/src/assets/btn/sologan.png" style="width:50%;margin-left: 45%;"/>
             <!-- <text style="color: aliceblue;font-size: 1.55vh;width: 100%">
               Copyright © 2015-2024 Powered By 云南人力资源开发有限责任公司 版权所有
               <times></times>
