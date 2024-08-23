@@ -17,7 +17,7 @@ function handleExternalLink(url) {
   <el-text type="primary" tag="p" class="tem-title">{{ props.title }}</el-text>
   <div class='btns'>
     <div class="ico" v-for="item in props.btns" :key="item.imageSrc" @click="jump(item.id)">
-      <a :href="item.url" target="_blank" rel="noopener noreferrer">
+      <a :href="item.url" target="_blank" rel="noopener noreferrer" >
         <img class="imag" :src="item.imageSrc" alt="Logo">
         <p class="desc">{{ item.desc }}</p>
       </a>
@@ -35,7 +35,7 @@ function handleExternalLink(url) {
   width: 100%;
   height: 100%;
   flex-wrap: wrap;
-  color: #426169d2;
+  color: #333333;
   font-weight: bold;
 
 }
@@ -52,12 +52,12 @@ function handleExternalLink(url) {
 }
 
 .imag {
-  width: 4.5vh;
-  height: 6.5vh;
+  width:5.5vh;
+  height:7vh;
 }
 
 .desc {
-  color: #50645a;
+  color: #333333;
   margin-top: 0vh;
   font-size: 1.6vh
 

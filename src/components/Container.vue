@@ -4,16 +4,16 @@ import ButtonList from "@/components/buttonList.vue";
 import times from "@/components/antv/getdate.vue"
 import UnderMap from "@/components/underMap.vue";
 import {computed, ref} from "vue";
-import rcpq from "@/assets/btn/rcpq03.svg";
-import rsdl from "@/assets/btn/rsgl.svg";
-import ks from "@/assets/btn/ksfw.svg";
-import lgsc from "@/assets/btn/lgsc.svg";
-import zp from "@/assets/btn/zp.svg";
-import px from "@/assets/btn/px.svg";
-import wbfw from "@/assets/btn/wbfw.svg";
-import gjrc from "@/assets/btn/gjrc.svg";
-import rsda from "@/assets/btn/rsda.svg";
-import jnrd from "@/assets/btn/jnrd.svg";
+import rcpq from "@/assets/btn/rcpq04.svg";
+import rsdl from "@/assets/btn/rsdl04.svg";
+import ks from "@/assets/btn/ks04.svg";
+import lgsc from "@/assets/btn/lgsc04.svg";
+import zp from "@/assets/btn/zp04.svg";
+import px from "@/assets/btn/pxfw04.svg";
+import wbfw from "@/assets/btn/wbfw04.svg";
+import gjrc from "@/assets/btn/gjrc03.svg";
+import rsda from "@/assets/btn/rsda04.svg";
+import jnrd from "@/assets/btn/jnrd04.svg";
 import g2Line from '@/components/antv/g2Line.vue';
 import pie from '@/components/antv/pie.vue';
 import chord from '@/components/antv/chord.vue';
@@ -127,63 +127,63 @@ const yccsBtns = ref([
   {
     imageSrc: rcpq,
     desc: '人才派遣',
-    url: "https://www.hrwork.com/"
+    url: "https://www.hrwork.com/",
   },
   {
     imageSrc: wbfw,
     desc: '外包服务',
-    url: "https://www.laofa.com/"
+    url: "https://www.laofa.com/",
   },
   {
     imageSrc: gjrc,
     desc: '国际人才',
-    url: "https://www.chuhaiyi.com/zh-CN/"
+    url: "https://www.chuhaiyi.com/zh-CN/",
   },
   {
     imageSrc: rsdl,
     desc: '人事代理',
-    url: "https://www.ysinc.com/product/ruzhitong"
+    url: "https://www.ysinc.com/product/ruzhitong",
   },
   {
     imageSrc: zp,
     desc: '招聘服务',
-    url: "https://www.ynhrkf.com"
+    url: "https://www.ynhrkf.com",
   },
   {
     imageSrc: lgsc,
     desc: '零工市场',
-    url: "https://www.linggongbao.com/#/"
+    url: "https://www.linggongbao.com/#/",
   },
   {
     imageSrc: ks,
     desc: '考试服务',
-    url: "http://www.kaoshitong.cn/"
+    url: "http://www.kaoshitong.cn/",
   },
   {
     imageSrc: px,
     desc: '培训服务',
-    url: "http://www.cepingtong.cn/"
+    url: "http://www.cepingtong.cn/",
   },
   {
     imageSrc: jnrd,
     desc: '技能认定',
-    url: "http://www.kaoshitong.cn/"
+    url: "http://www.kaoshitong.cn/",
   },
 
   {
     imageSrc: rsda,
     desc: '人事档案',
-    url: "http://www.beidiaotong.cn/"
+    url: "http://www.beidiaotong.cn/",
 
   }
 
 ]);
 
-import yqgk from "@/assets/btn/yqgk.svg";
-import zs from "@/assets/btn/zs.svg";
-import sthb from "@/assets/btn/sthb.svg";
-import yqdt from "@/assets/btn/yqdt.svg";
-import jyxc from "@/assets/btn/jyxc.svg";
+import yqgk from "@/assets/btn/yqgk04.svg";
+import zs from "@/assets/btn/zs04.svg";
+import sthb from "@/assets/btn/sthb04.svg";
+import yqdt from "@/assets/btn/yqdt04.svg";
+import jyxc from "@/assets/btn/jyxc04.svg";
 // 人力资源产业园
 const rlzyBtns = ref([
   {
@@ -245,10 +245,10 @@ setInterval(() => {
   startIndex.value = (startIndex.value + 1) % news.value.length;
 }, 1500);
 
-import zbyw from "@/assets/btn/zbyw.svg";
-import wljs from "@/assets/btn/wljs.svg";
-import fycc from "@/assets/btn/fycc.svg";
-import chwl from "@/assets/btn/chwl.svg";
+import zbyw from "@/assets/btn/zbyw04.svg";
+import wljs from "@/assets/btn/wljs04.svg";
+import fycc from "@/assets/btn/fycc04.svg";
+import chwl from "@/assets/btn/chwl04.svg";
 // y云品出滇
 const ypcd = ref([
   {
@@ -269,11 +269,12 @@ const ypcd = ref([
   },
 
 ])
-import qyjs from "@/assets/btn/qyjs.svg";
-import djyl from "@/assets/btn/djyl.svg";
-import zgzj from "@/assets/btn/zgzj.svg";
+import qyjs from "@/assets/btn/qyjs04.svg";
+import djyl from "@/assets/btn/djyl04.svg";
+import zgzj from "@/assets/btn/zgzj04.svg";
 import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
 import G2LineAi from "@/components/antv/g2LineAi.vue";
+import { removeDuplicateUniforms } from "@antv/l7";
 
 const gyytrl = ref([
   {
@@ -540,7 +541,7 @@ const gyytrl = ref([
   height: 6vh;
   font-size: 1.2vw;
   border-radius: 2vh;
-  background-image: linear-gradient(to top, #5870645a, #fdfdfd1c);
+  background-image: linear-gradient(to top, #5bae855a, #eff0ef1d);
   color: #426169;
 }
 
@@ -549,7 +550,7 @@ const gyytrl = ref([
   height: 6vh;
   font-size: 1.2vw;
   border-radius: 2vh;
-  background-color: rgba(255, 255, 255, 0.727);
+  background-image: linear-gradient(to bottom, #5bae8458, #eff0ef1d);
   color: #426169;
 }
 
