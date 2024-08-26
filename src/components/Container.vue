@@ -309,9 +309,11 @@ const gyytrl = ref([
       <div class="placeholder" style="flex: 1;"></div>
       <div
           style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
-        <el-button class="bt1" >企业登录/注册</el-button>
+          <el-button class="bt1" >企业登录/注册</el-button>
         <el-button class="bt2">个人登录/注册</el-button>
       </div>
+      
+      
     </el-header>
     <el-main class="el-main-flex">
       <!-- body -->
