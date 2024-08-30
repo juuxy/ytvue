@@ -1,10 +1,22 @@
 <template>  
-<div class="login-dl">
-   <div class="login-container">
+ <div class="loginy">
+      
+    <el-header height="12vh">
+      <!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
+
+      <img src="/src/assets/logo.png" style="width:13%"/>
+
+    </el-header>
+
+   <div class="login-dl">
+    <div class="login-container">
   
      <!-- 扫码登录内容 -->  
-     <p>请使用手机扫码登录</p>  
-     <!-- 这里可以放置二维码图片 -->  
+     <p style="font-size: 20px;">请使用微信扫码登录</p>  
+     <a :href="wechatLoginUrl" target="_blank">
+      <img src="https://res.wx.qq.com/connect/zh_CN/htmledition/images/qrcode/qrcode_default.png" alt="微信扫码登录" />
+    </a>
+     <!-- 这里可以放置二维码图片 --> 
    </div>
   <div class="login-container">  
  
@@ -25,36 +37,74 @@
 
       <input type="text" placeholder="验证码" style="width: 43%;" />  
       <button style="width: 35%;margin-left: 10%;">发送验证码</button>  
-      <button>登录</button>  
+      <button>登录</button> 
     </div>  
+    <div class="link-container">  
+  <a href="#" class="left-link">忘记密码</a>  
+  <a href="#" class="right-link">找回密码</a>  
+</div>  
+  
   </div>  
 </div>
+ </div>
 </template>  
   
 <script>  
 export default {  
   data() {  
     return {  
-      activeTab: 1, // 控制显示哪个登录方式的索引  
+      activeTab: 1,
+      wechatLoginUrl: "", // 控制显示哪个登录方式的索引  
     };  
   },  
-};  
+ 
+  mounted() {
+    // 生成微信扫码登录链接
+    this.wechatLoginUrl ='http://localhost:5173//wechat/login';
+  }
+}
 </script>  
   
 <style scoped>  
+body, html {  
+  height: 100%;
+  margin: 0;  
+  overflow: hidden;
+}  
+
+  
+.loginy {  
+  background-image: url('@/assets/background/bg04.jpg');   
+  background-size: cover;  
+  background-repeat: no-repeat;   
+  background-attachment: fixed;  
+}
+
+.el-header {
+  color: #333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  box-shadow: 0 1vh 1vw rgba(0, 0, 0, 0.1); /* 轻微的阴影效果提升层次感 */
+}
 .login-dl{
-  display: flex; /* 启用Flexbox */  
+  display: flex; 
   justify-content: center; 
-  margin:150px auto ;
+  align-items: center; 
+  height: 88vh;
+  
 }
 .login-container {    
   width: 270px; /* 稍微增宽以容纳更多内容 */  
-  height: 320px;
+  height: 350px;
   border: 1px solid #ccc;  
   padding: 30px;
   border-radius: 6px; /* 添加圆角 */  
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);  
-  background-color: #f9f9f9; /* 浅灰色背景 */  
+  background-color: #f9f9f9c8; /* 浅灰色背景 */  
+  text-align: center;
+  z-index: 1;
 }  
   
 .login-tabs {  
@@ -71,21 +121,22 @@ export default {
   outline: none;  
   font-size: 16px;  
   color: #333;  
-  transition: all 0.3s ease; /* 添加过渡效果 */  
+  transition: all 0.3s ease; /* 添加过渡效果 */
 }  
   
 .login-tabs button.active {  
-  color: #007bff; /* 蓝色激活状态 */  
-  border-bottom: 2px solid #007bff;  
-  font-weight: bold; /* 加粗字体 */  
+   color: #426169;
+  border-bottom: 2px solid #426169;  
+  font-weight: bold; /* 加粗字体 */ 
 }  
   
 .login-tabs button:hover {  
-  color: #0056b3; /* 鼠标悬停时颜色变深 */  
+  color:#426169; /* 鼠标悬停时颜色变深 */
 }  
   
 .login-form {  
   margin-top: 20px;
+  z-index: 1;
 }  
   
 .login-form input[type="text"],  
@@ -105,7 +156,7 @@ export default {
   margin-top: 15px;
   border: none;  
   border-radius: 4px;  
-  background-color: #007bff;  
+  background-color: #426169bf;
   color: white;  
   font-size: 14px;  
   cursor: pointer;  
@@ -113,6 +164,20 @@ export default {
 }  
   
 .login-form button:hover {  
-  background-color: #0056b3; /* 鼠标悬停时背景色变深 */  
+  background-color:#559a75;   
+    height: auto;
+}
+.link-container {  
+  display: flex;  
+  justify-content: space-between;   
+  align-items: center;   
+  padding: 10px;  
+  background-color: #f0f0f000; 
+}  
+  
+.left-link, .right-link {  
+  text-decoration: none; 
+  color: #426169; 
+  font-size: 15px;
 }  
 </style>

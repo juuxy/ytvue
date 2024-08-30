@@ -18,6 +18,7 @@ import g2Line from '@/components/antv/g2Line.vue';
 import pie from '@/components/antv/pie.vue';
 import chord from '@/components/antv/chord.vue';
 
+
 const g2Views = [{
   name: "view1",
 }, {
@@ -249,6 +250,7 @@ import zbyw from "@/assets/btn/zbyw04.svg";
 import wljs from "@/assets/btn/wljs04.svg";
 import fycc from "@/assets/btn/fycc04.svg";
 import chwl from "@/assets/btn/chwl04.svg";
+import ytyx from "@/assets/btn/ytyx04.svg";
 // y云品出滇
 const ypcd = ref([
   {
@@ -267,6 +269,10 @@ const ypcd = ref([
     imageSrc: chwl,
     desc: '吃喝玩乐',
   },
+  {
+    imageSrc: ytyx,
+    desc: '云投优选',
+  },
 
 ])
 import qyjs from "@/assets/btn/qyjs04.svg";
@@ -275,6 +281,7 @@ import zgzj from "@/assets/btn/zgzj04.svg";
 import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
 import G2LineAi from "@/components/antv/g2LineAi.vue";
 import { removeDuplicateUniforms } from "@antv/l7";
+import Loginbutton from "./icons/loginbutton.vue";
 
 const gyytrl = ref([
   {
@@ -296,6 +303,7 @@ const gyytrl = ref([
 
 ])
 
+
 </script>
 <template>
 
@@ -304,13 +312,18 @@ const gyytrl = ref([
     <el-header height="12vh">
       <!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
 
-      <img src="/src//assets/logo.png" style="width:13%"/>
+      <img src="/src/assets/logo.png" style="width:13%"/>
 
       <div class="placeholder" style="flex: 1;"></div>
       <div
           style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
-          <el-button class="bt1" >企业登录/注册</el-button>
-        <el-button class="bt2">个人登录/注册</el-button>
+      
+          <router-link to="./Register">
+          <el-button class="bt1"  >用户注册</el-button>
+        </router-link> 
+          <router-link to="/login">
+          <el-button class="bt2">用户登录</el-button> 
+        </router-link> 
       </div>
       
       
@@ -379,9 +392,9 @@ const gyytrl = ref([
         </el-col>
         <!-- li2 -->
         <el-col :span="8"
-                class="body-col">
+                class="body-col" >
           <!--云才出山-->
-          <div class='template' style="height: 55% ">
+          <div class='template' style="height: 55%;">
             <button-list :title="'云才出山'" :btns="yccsBtns"></button-list>
           </div>
           <div class='template' style="height: 35% ">
@@ -391,13 +404,13 @@ const gyytrl = ref([
 
         <!-- li3 -->
         <el-col :span="8" class="body-col">
-          <div class='template' style="height: 28%">
+          <div class='template' style="height: 38%">
             <button-list :title="'云品出滇'" :btns="ypcd"></button-list>
           </div>
           <div class='template' style="height:28%;">
             <button-list :title="'关于云投人力'" :btns="gyytrl"></button-list>
           </div>
-          <div class="foot" style="height:34%">
+          <div class="foot" style="height:28%">
             <!--<img src="/src/assets/btn/gzh.png" style="width:25%;margin-left: 60%"/>
             <img src="/src/assets/btn/dt.png" style="width:20%"/> -->
             <img src="/src/assets/btn/sologan.png" style="width:50%;margin-left: 45%;"/>
@@ -442,6 +455,10 @@ const gyytrl = ref([
   top: 0;
   left: 0;
   bottom: 0;
+  background-image: url('../assets/background/bg04.jpg');   
+  background-size: cover;  
+  background-repeat: no-repeat;   
+  background-attachment: fixed;  
 }
 
 
@@ -517,7 +534,7 @@ const gyytrl = ref([
   text-align: center;
   margin-top: 1vh;
   width: 29vw;
-  height: 55vh;
+  height: 65vh;
 
 }
 
@@ -545,6 +562,7 @@ const gyytrl = ref([
   border-radius: 2vh;
   background-image: linear-gradient(to top, #5bae855a, #eff0ef1d);
   color: #426169;
+  margin-right: 25px;
 }
 
 .bt2 {

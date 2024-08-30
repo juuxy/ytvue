@@ -5,7 +5,7 @@ import Container from "@/components/Container.vue";
 // import bg1 from '@/assets/background/bg1.png';
 import bg2 from '@/assets/background/bg2.png';
 import bg3 from '@/assets/background/bg04.jpg';
-import Login from './components/login.vue';
+import { register } from '@antv/g2';
 // import bg4 from '@/assets/background/bg4.jpg';
 // import bg5 from '@/assets/background/bg5.jpg';
 
@@ -42,9 +42,10 @@ onUnmounted(() => {
 
 <template>
   <div id="app" >
-    <Login></Login>
-    <!-- <div class="background-layer" :style="{ opacity: opacity, backgroundImage: `url(${backgroundImage})` }"></div>
-    <Container></Container> -->
+   <!-- <div class="background-layer" :style="{ opacity: opacity, backgroundImage: `url(${backgroundImage})` }"></div>
+    <Container></Container>  -->
+     <router-view/>
+  
   </div>
 </template>
 
@@ -74,7 +75,10 @@ onUnmounted(() => {
   z-index: 1; /* 确保容器内容在背景层之上 */
   overflow: hidden;
 }
-
+.router-view {  
+  position: relative;  
+  z-index: 1; /* 确保 <router-view/> 下的内容（如 Login, Register 组件）在背景层之上 */  
+}  
 .all{
   overflow: hidden;
 }

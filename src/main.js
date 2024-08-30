@@ -1,34 +1,49 @@
-import { createApp } from 'vue'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-import App from './App.vue'
-// import axios from 'axios'
-// import {Chart} from "@antv/g2";
-// import VueAxios from 'vue-axios'
-// import * as G2 from '@antv/g2'
-
-// import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-
-const app = createApp(App)
-// 基于 promise 的网络请求库
-// app.config.globalProperties.$http = axios
-// antv可视化组件
-// app.config.globalProperties.$G2 = G2
-// 轮播图时长全局设定
-app.config.globalProperties.BASE_SWITCH_TIME = 120
-// 轮播图时长全局设定
-app.config.globalProperties.GOODS_SWITCH_TIME = 15
-// KG正式环境服务器
-// axios.defaults.baseURL = 'http://10.200.6.22:8000'
-// 测试使用的环回地址
-// axios.defaults.baseURL = 'http://127.0.0.1:8000'
-
-
-
-//
-// for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-//     app.component(key, component)
-// }
-app.use(ElementPlus)
+import { createApp } from 'vue'  
+import ElementPlus from 'element-plus'  
+import 'element-plus/dist/index.css'  
+import App from './App.vue'  
+import { createRouter, createWebHistory } from 'vue-router'  
+// 假设 Login 组件位于 src/views/Login.vue  
+import Login from '@/router/views/login.vue'
+import Home from '@/components/Container.vue'   
+import Register from '@/router/views/Register.vue'
+  
+const app = createApp(App)  
+  
+// 路由配置  
+const routes = [  
+    {  
+        path: '/',  
+        name: 'Home',  
+        component: Home // 当访问根路径时，显示 Home 组件  
+      }, 
+  {  
+    path: '/login',  
+    name: 'login',  
+    component: Login  
+  }  , 
+  {  
+    path: '/Register',  
+    name: 'Register',  
+    component: Register  
+  }  
+  // 可以添加更多路由...  
+]  
+  
+const router = createRouter({  
+  history: createWebHistory(),  
+  routes // 使用上面定义的 routes 数组  
+})  
+  
+// 使用 ElementPlus 插件  
+app.use(ElementPlus)  
+  
+// 如果需要使用路由，也需要在 app 实例上使用路由  
+app.use(router)  
+  
+// 全局属性设置（已保留）  
+app.config.globalProperties.BASE_SWITCH_TIME = 120  
+app.config.globalProperties.GOODS_SWITCH_TIME = 15  
+  
+// 挂载应用  
 app.mount('#app')
-
