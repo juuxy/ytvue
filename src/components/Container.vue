@@ -17,7 +17,22 @@ import jnrd from "@/assets/btn/jnrd04.svg";
 import g2Line from '@/components/antv/g2Line.vue';
 import pie from '@/components/antv/pie.vue';
 import chord from '@/components/antv/chord.vue';
-
+import {onMounted, onUnmounted } from 'vue';  
+  
+const isMobile = ref(false);  
+  
+function updateMobileStatus() {  
+  isMobile.value = window.innerWidth <= 768;  
+}  
+  
+onMounted(() => {  
+  window.addEventListener('resize', updateMobileStatus);  
+  updateMobileStatus();  
+});  
+  
+onUnmounted(() => {  
+  window.removeEventListener('resize', updateMobileStatus);  
+});  
 
 const g2Views = [{
   name: "view1",
@@ -282,6 +297,7 @@ import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
 import G2LineAi from "@/components/antv/g2LineAi.vue";
 import { removeDuplicateUniforms } from "@antv/l7";
 import Loginbutton from "./icons/loginbutton.vue";
+import Phone from "./icons/Phone.vue";
 
 const gyytrl = ref([
   {
@@ -306,20 +322,20 @@ const gyytrl = ref([
 
 </script>
 <template>
-
+<div v-if="!isMobile"> 
   <!-- top -->
   <el-container class="out_container">
     <el-header height="12vh">
       <!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
 
       <img src="/src/assets/logo.png" style="width:13%"/>
-
+     
       <div class="placeholder" style="flex: 1;"></div>
       <div
           style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
       
           <router-link to="./Register">
-          <el-button class="bt1"  >用户注册</el-button>
+          <el-button class="bt1" >用户注册</el-button>
         </router-link> 
           <router-link to="/login">
           <el-button class="bt2">用户登录</el-button> 
@@ -332,7 +348,7 @@ const gyytrl = ref([
       <!-- body -->
       <el-row class="el-main-flex">
         <el-col :span="8"
-                class="body-col">
+                class="body-col" >
           
                 <div class='template' style="height:60%">
             <el-carousel height="50vh">
@@ -436,8 +452,10 @@ const gyytrl = ref([
 
 
   </el-container>
-
-
+</div>
+<div v-else>  
+<Phone></Phone>
+  </div>  
 </template>
 
 
@@ -461,18 +479,6 @@ const gyytrl = ref([
   background-attachment: fixed;  
 }
 
-
-/* .aside_main_footer_container {
-  width: 100vw;
-}
-
-.main_footer_container {
-  width: 100vw;
-}
-
-.aside_container {
-  width: 18%;
-} */
 
 /* top */
 .el-header {
@@ -522,21 +528,6 @@ const gyytrl = ref([
   width: 95%;
 }
 
-.template3 {
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 5vh;
-  background-color: #dce6e176;
-  border: #2c3e5031 solid 0.1vw;
-  text-align: center;
-  margin-top: 1vh;
-  width: 29vw;
-  height: 65vh;
-
-}
 
 /* 业务数字大屏 */
 .tem-title {

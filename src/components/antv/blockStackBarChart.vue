@@ -42,6 +42,8 @@ const data = ref([
   { "type": "jobs", "人数": 135, "地区": "迪庆" },
 ]);
 
+
+
 onMounted(async () => {
   await nextTick();
 

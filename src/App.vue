@@ -6,6 +6,7 @@ import Container from "@/components/Container.vue";
 import bg2 from '@/assets/background/bg2.png';
 import bg3 from '@/assets/background/bg04.jpg';
 import { register } from '@antv/g2';
+import Phone from '@/components/icons/Phone.vue';
 // import bg4 from '@/assets/background/bg4.jpg';
 // import bg5 from '@/assets/background/bg5.jpg';
 
@@ -18,6 +19,8 @@ const nextBackgroundImage = ref(backgroundImages[nextIndex.value]);
 const opacity = ref(1);
 
 let intervalId = null;
+
+
 
 onMounted(() => {
   intervalId = setInterval(() => {
@@ -45,7 +48,7 @@ onUnmounted(() => {
    <!-- <div class="background-layer" :style="{ opacity: opacity, backgroundImage: `url(${backgroundImage})` }"></div>
     <Container></Container>  -->
      <router-view/>
-  
+     
   </div>
 </template>
 
