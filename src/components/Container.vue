@@ -14,6 +14,8 @@ import wbfw from "@/assets/btn/wbfw04.svg";
 import gjrc from "@/assets/btn/gjrc03.svg";
 import rsda from "@/assets/btn/rsda04.svg";
 import jnrd from "@/assets/btn/jnrd04.svg";
+import zxyw from "@/assets/btn/zxyw.svg";
+
 import g2Line from '@/components/antv/g2Line.vue';
 import pie from '@/components/antv/pie.vue';
 import chord from '@/components/antv/chord.vue';
@@ -45,29 +47,25 @@ const g2Views = [{
 }]
 
 const pieData = [
-  {name: '公司领导', value: 5},
-  {name: '党群综合部', value: 7},
-  {name: '财务管理部', value: 10},
-  {name: '党委', value: 1},
-  {name: '经营管理部', value: 5},
-  {name: '纪检风控部', value: 4},
-  {name: '市场营销中心', value: 3},
-  {name: '产品服务中心', value: 7},
-  {name: '业务发展中心', value: 5},
+{ name: '农业', value: 30 },
+  { name: '制造业', value: 20 },
+  { name: '建筑业', value: 10 },
+  { name: '批发和零售', value: 15 },
+  { name: '服务业（包括旅游、教育、医疗等）', value: 25},
+ 
 ];
 
 const pieData2 = [
-  {name: '财务管理类', value: 10},
-  {name: '纪检类', value: 3},
-  {name: '党群类', value: 3},
-  {name: '行政管理类', value: 4},
-  {name: '人力资源类', value: 4},
-  {name: '投资管理类', value: 1},
-  {name: '经营管理类', value: 7},
-  {name: '市场拓展类', value: 8},
-  {name: '研发类', value: 0},
-  {name: '法律合规类', value: 4},
-  {name: '安全管理类', value: 1},
+  {name: '财务管理类', value: 22},
+  {name: '纪检类', value:3.45},
+  {name: '党群类', value: 3.45},
+  {name: '行政管理类', value: 8.9},
+  {name: '人力资源类', value: 8.9},
+  {name: '投资管理类', value: 2.2},
+  {name: '经营管理类', value: 7.5},
+  {name: '市场拓展类', value: 8.45},
+  {name: '法律合规类', value: 4.45},
+  {name: '安全管理类', value: 1.45},
 ];
 
 const chordData = [
@@ -168,7 +166,7 @@ const yccsBtns = ref([
   {
     imageSrc: lgsc,
     desc: '零工市场',
-    url: "https://www.linggongbao.com/#/",
+    url: "http://qyy-test.lirenkeji.com/#/login?redirect=/home/index",
   },
   {
     imageSrc: ks,
@@ -178,19 +176,24 @@ const yccsBtns = ref([
   {
     imageSrc: px,
     desc: '培训服务',
-    url: "http://www.cepingtong.cn/",
+    url: "https://www.lebanban.com/mall/product/info",
   },
   {
     imageSrc: jnrd,
     desc: '技能认定',
     url: "http://www.kaoshitong.cn/",
   },
-
+  
   {
     imageSrc: rsda,
     desc: '人事档案',
     url: "http://www.beidiaotong.cn/",
 
+  },
+  {
+    imageSrc: zxyw,
+    desc: '咨询业务',
+    url: "https://www.ynhrs.com/ldcms/lianxiwomen.html",
   }
 
 ]);
@@ -205,26 +208,27 @@ const rlzyBtns = ref([
   {
     imageSrc: yqgk,
     desc: '园区概况',
-    url: "http://www.ynythr.com/newslist/yqyy.htm"
+    url: "https://www.ynhrs.com/ldcms/xinwenzhongxin.html"
   },
   {
     imageSrc: zs,
     desc: '招商',
-    url: "http://www.ynythr.com/newslist/tspfxs.htm"
+    url: "https://www.ynhrs.com/ldcms/hangyezixun.html"
   },
   {
     imageSrc: sthb,
     desc: '生态伙伴',
-    url: "http://www.ynythr.com/newslist/zcgg.htm"
+    url: "https://www.ynhrs.com/ldcms/shengtaihuoban.html"
   },
   {
     imageSrc: yqdt,
     desc: '园区动态',
-    url: "http://www.ynythr.com/newslist/yqyy.htm"
+    url: "https://www.ynhrs.com/ldcms/yuanqudongtai.html"
   },
   {
     imageSrc: jyxc,
     desc: '建言献策',
+     url: "https://www.ynhrs.com/ldcms/lianxiwomen"
   },
 ])
 
@@ -235,13 +239,13 @@ const rlzyBtns = ref([
 //     <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
 // <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
 const news = ref([
-  { title: "云投人力成为工业和信息化部人...", date: "2024-07-07" },
-  { title: "云南省2024年度灵活结业人员...", date: "2024-07-11" },
-  { title: "云投人力和云南工商学院经管...", date: "2024-01-09" },
-  { title: "昆明智能会议室随租随用", date: "2024-06-27" },
-  { title: "云南省2024年度灵活就业人员...", date: "2024-07-04" },
-  { title: "云投人力与深圳市怡亚通供应链...", date: "2024-07-11" },
-  { title: "园区经济筑基赋能|云投中心B3...", date: "2024-07-11" },
+  { title: "云投中心B3栋14F共享办公室等您来", date: "2024-08-22", url: "https://www.ynhrs.com/ldcms/hangyezixun/343.html" },
+  { title: "云投人力劳务派遣怎么服务的？", date: "2024-07-11", url: "http://www.ynythr.com/ynhrkf/news/zyjnhcypi/15149ec7-98f3-450a-bb80-fe2e604fee64.htm" },
+  { title: "云南外事服务中心“外事服务窗口”...", date: "2024-09-02" , url: "https://www.ynhrs.com/ldcms/yuanqudongtai/414.html"},
+  { title: "云南省人力资源服务业发展研讨...", date: "2024-08-02", url: "https://www.ynhrs.com/ldcms/yuanqudongtai/350.html" },
+  { title: "园区入驻企业招才纳贤", date: "2024-08-02", url: "https://www.ynhrs.com/ldcms/yuanqudongtai/349.html" },
+  { title: "清凉的云南出圈 激发文旅消费新...", date: "2024-09-05", url: "https://www.ynhrs.com/ldcms/pinpaisheji/430.html" },
+  { title: "云投人力创建申报的云南（昆明...", date: "2024-08-02", url: "https://www.ynhrs.com/ldcms/yuanqudongtai/347.html" },
 ]);
 
 const startIndex = ref(0);
@@ -261,6 +265,8 @@ setInterval(() => {
   startIndex.value = (startIndex.value + 1) % news.value.length;
 }, 1500);
 
+
+
 import zbyw from "@/assets/btn/zbyw04.svg";
 import wljs from "@/assets/btn/wljs04.svg";
 import fycc from "@/assets/btn/fycc04.svg";
@@ -271,22 +277,30 @@ const ypcd = ref([
   {
     imageSrc: zbyw,
     desc: '直播业务',
+    url: "https://www.ynhrs.com/ldcms/huacesheji.html",
+
   },
   {
     imageSrc: wljs,
     desc: '文旅介绍',
+    url: "https://www.ynhrs.com/ldcms/pinpaisheji.html",
+
   },
   {
     imageSrc: fycc,
     desc: '非遗传承',
+    url: "https://www.ynhrs.com/ldcms/feiyichuancheng.html",
+
   },
   {
     imageSrc: chwl,
     desc: '吃喝玩乐',
+
   },
   {
     imageSrc: ytyx,
     desc: '云投优选',
+
   },
 
 ])
@@ -298,28 +312,33 @@ import G2LineAi from "@/components/antv/g2LineAi.vue";
 import { removeDuplicateUniforms } from "@antv/l7";
 import Loginbutton from "./icons/loginbutton.vue";
 import Phone from "./icons/Phone.vue";
+import topnav from "./icons/topnav.vue";
 
 const gyytrl = ref([
   {
     imageSrc: qyjs,
     desc: '企业介绍',
-    url: "http://www.ynythr.com/newslist/gsjjvd.htm"
+    url: "https://www.ynhrs.com/ldcms/lianxiwomen"
   },
   {
     imageSrc: djyl,
     desc: '党建引领',
-    url: "http://www.ynythr.com/newslist/dqgz.htm"
+    url: "https://www.ynhrs.com/ldcms/dangjianyinling.html"
   },
   {
     imageSrc: zgzj,
     desc: '职工之家',
-    url: "https://www.cnyig.com/newslist/ytgh.htm"
+    url: "https://www.ynhrs.com/ldcms/zhigongzhijia.html"
   },
 
 
 ])
 
 
+
+function goToExternalUrl(url: any) {
+  throw new Error("Function not implemented.");
+}
 </script>
 <template>
 <div v-if="!isMobile"> 
@@ -329,17 +348,18 @@ const gyytrl = ref([
       <!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
 
       <img src="/src/assets/logo.png" style="width:13%"/>
-     
+     <img src="/src/assets/haoye.png" style="width: 10%;"/>
       <div class="placeholder" style="flex: 1;"></div>
+      <div><topnav></topnav></div>
       <div
           style="display: flex;flex-direction: row ;justify-items: center;align-items: center;justify-content: space-around;height: 13vh;margin-right:2vw">
       
-          <router-link to="./Register">
-          <el-button class="bt1" >用户注册</el-button>
-        </router-link> 
-          <router-link to="/login">
-          <el-button class="bt2">用户登录</el-button> 
-        </router-link> 
+          <!-- <router-link to="./Register">
+          <el-button class="bt1" >用户注册/登陆</el-button>
+        </router-link>  -->
+          <!-- <router-link to="/login">
+          <el-button class="bt2">用户注册/登录</el-button> 
+        </router-link>  -->
       </div>
       
       
@@ -350,17 +370,17 @@ const gyytrl = ref([
         <el-col :span="8"
                 class="body-col" >
           
-                <div class='template' style="height:60%">
+          <div class='template' style="height:60%">
             <el-carousel height="50vh">
               <a href="https://www.ynhrkf.com/datav/" target="_blank"> 
               <el-carousel-item height="50vh">
                 <block-stack-bar-chart></block-stack-bar-chart>
               </el-carousel-item>
-              <el-carousel-item height="50vh">
+              <el-carousel-item height="10vh">
                 <g2-line-ai></g2-line-ai>
               </el-carousel-item> 
               <el-carousel-item >
-                <pie title="员工分布图" container-id="sadsadsa" :data=pieData class="g2-view" style="width:100%"></pie>
+                <pie title="主要行业的从业人员分布" container-id="sadsadsa" :data=pieData class="g2-view" style="width:100%"></pie>
               </el-carousel-item>
                <el-carousel-item height="50vh">
                 <g2-line class="g2-view" style="width:100%"></g2-line>
@@ -379,30 +399,24 @@ const gyytrl = ref([
             <!-- <button-list :title="'业务数字大屏'" :btns="yccsBtns"></button-list> -->
         
           </div>
-
           <!-- 新闻公告 -->
           <div class='template'>
-
-
             <!-- 新闻公告 -->
             <el-text
                 style="font-size: 3vh;text-align: left;font-weight: bold;color:#587064;">
               公 告
             </el-text>
-<!--            <div class="news-info">-->
-<!--              <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>-->
-<!--              <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>-->
-<!--              <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>-->
-<!--              <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>-->
-<!--              <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>-->
-<!--              <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>-->
-<!--            </div>-->
-            <div class="news-info">
-              <div v-for="(item, index) in currentNews" :key="index" class="news-item">
-                <p style="width: 70%;font-size: 1.2vw">{{ item.title }}</p>
-                <p style="width: 25%;font-size: 1.2vw">{{ item.date }}</p>
-              </div>
-            </div>
+
+            <div class="news-info">  
+  <div v-for="(item, index) in currentNews" :key="index" class="news-item">  
+    <a :href="item.url" target="_blank" rel="noopener noreferrer">  
+      <div class="new-link">
+      <p style="width: 70%; font-size: 1.2vw">{{ item.title }}</p>  
+      <p style="width: 25%; font-size: 1.2vw">{{ item.date }}</p>  
+    </div>
+    </a>  
+  </div>  
+</div>
           </div>
 
         </el-col>
@@ -447,10 +461,7 @@ const gyytrl = ref([
 
 
     </el-main>
-
     <!-- foot -->
-
-
   </el-container>
 </div>
 <div v-else>  
@@ -473,7 +484,7 @@ const gyytrl = ref([
   top: 0;
   left: 0;
   bottom: 0;
-  background-image: url('../assets/background/bg04.jpg');   
+  background-image: url('../assets/background/bg043.jpg');   
   background-size: cover;  
   background-repeat: no-repeat;   
   background-attachment: fixed;  
@@ -575,22 +586,26 @@ const gyytrl = ref([
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.914);
-  color: #587064;
+  color: #2bc678;
 }
 
 /* 公告表单 */
 .news-item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   width: 100%;
-
   border-bottom-right-radius: 5vh;
   border-bottom-left-radius: 5vh;
   background-color: rgba(230, 231, 232, 0.864);
   color: #587064;
 }
-
+.new-link{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  color: #587064;
+}
+a {  
+  text-decoration: none;  
+} 
 
 .foot {
   display: flex;

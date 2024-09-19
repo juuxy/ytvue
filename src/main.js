@@ -15,17 +15,20 @@ const routes = [
     {  
         path: '/',  
         name: 'Home',  
-        component: Home // 当访问根路径时，显示 Home 组件  
+        component: Home ,// 当访问根路径时，显示 Home 组件  
+      meta: { title: '首页' }  
       }, 
   {  
     path: '/login',  
     name: 'login',  
-    component: Login  
+    component: Login  ,
+    meta: { title: '用户登陆' } 
   }  , 
   {  
     path: '/Register',  
     name: 'Register',  
-    component: Register  
+    component: Register ,
+    meta: { title: '用户注册' } 
   }  
   // 可以添加更多路由...  
 ]  
@@ -35,6 +38,12 @@ const router = createRouter({
   routes // 使用上面定义的 routes 数组  
 })  
   
+router.beforeEach((to, from, next) => {  
+  if (to.meta && to.meta.title) {  
+    document.title = to.meta.title  
+  }  
+  next()  
+})
 // 使用 ElementPlus 插件  
 app.use(ElementPlus)  
   

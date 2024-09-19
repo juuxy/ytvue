@@ -3,44 +3,43 @@ import {ref, onMounted, onUnmounted} from 'vue';
 import Container from "@/components/Container.vue";
 
 // import bg1 from '@/assets/background/bg1.png';
-import bg2 from '@/assets/background/bg2.png';
-import bg3 from '@/assets/background/bg04.jpg';
+import bg3 from '@/assets/background/bg043.jpg';
 import { register } from '@antv/g2';
-import Phone from '@/components/icons/Phone.vue';
+
 // import bg4 from '@/assets/background/bg4.jpg';
 // import bg5 from '@/assets/background/bg5.jpg';
 
-const backgroundImages = [ bg3];
-const currentIndex = ref(0);
-const nextIndex = ref(1);
+// const backgroundImages = [ bg3];
+// const currentIndex = ref(0);
+// const nextIndex = ref(1);
 
-const backgroundImage = ref(backgroundImages[currentIndex.value]);
-const nextBackgroundImage = ref(backgroundImages[nextIndex.value]);
-const opacity = ref(1);
+// const backgroundImage = ref(backgroundImages[currentIndex.value]);
+// const nextBackgroundImage = ref(backgroundImages[nextIndex.value]);
+// const opacity = ref(1);
 
-let intervalId = null;
+// let intervalId = null;
 
 
 
-onMounted(() => {
-  intervalId = setInterval(() => {
-    nextIndex.value = (currentIndex.value + 1) % backgroundImages.length;
-    nextBackgroundImage.value = backgroundImages[nextIndex.value];
-    opacity.value = 0; // 开始淡出
+// onMounted(() => {
+//   intervalId = setInterval(() => {
+//     nextIndex.value = (currentIndex.value + 1) % backgroundImages.length;
+//     nextBackgroundImage.value = backgroundImages[nextIndex.value];
+//     opacity.value = 0; // 开始淡出
 
-    setTimeout(() => {
-      currentIndex.value = nextIndex.value;
-      backgroundImage.value = nextBackgroundImage.value;
-      opacity.value = 1; // 开始淡入
-    }, 200); // 过渡时间和 CSS transition 保持一致
-  }, 7000); // 每5秒切换一次
-});
+//     setTimeout(() => {
+//       currentIndex.value = nextIndex.value;
+//       backgroundImage.value = nextBackgroundImage.value;
+//       opacity.value = 1; // 开始淡入
+//     }, 200); // 过渡时间和 CSS transition 保持一致
+//   }, 7000); // 每5秒切换一次
+// });
 
-onUnmounted(() => {
-  if (intervalId) {
-    clearInterval(intervalId);
-  }
-});
+// onUnmounted(() => {
+//   if (intervalId) {
+//     clearInterval(intervalId);
+//   }
+// });
 </script>
 
 <template>

@@ -4,7 +4,7 @@
 <!--      {{ dict.name }}-->
 <!--    </div>-->
     <g2-line class="g2-view" style="width:60%"></g2-line>
-    <pie title="员工分布图" container-id="sadsadsa" :data=pieData class="g2-view" style="width:30%"></pie>
+    <pie title="云南主要行业从业人员分布" container-id="sadsadsa" :data=pieData class="g2-view" style="width:30%"></pie>
     <pie title="员工人才分类汇总表" container-id="12321" :data=pieData2 class="g2-view" style="width:30%"></pie>
     <chord title="人员流动表" container-id="333" :data=chordData class="g2-view" style="width:30%"></chord>
   </div>
@@ -28,15 +28,12 @@ const g2Views = [{
 }]
 
 const pieData = [
-  { name: '公司领导', value: 5 },
-  { name: '党群综合部', value: 7 },
-  { name: '财务管理部', value: 10 },
-  { name: '党委', value: 1 },
-  { name: '经营管理部', value: 5 },
-  { name: '纪检风控部', value: 4 },
-  { name: '市场营销中心', value: 3 },
-  { name: '产品服务中心', value: 7 },
-  { name: '业务发展中心', value: 5 },
+  { name: '农业', value: 30 },
+  { name: '制造业', value: 20 },
+  { name: '建筑业', value: 10 },
+  { name: '批发和零售', value: 15 },
+  { name: '服务业（包括旅游、教育、医疗等）', value: 25},
+ 
 ];
 //
 // 财务管理类	10

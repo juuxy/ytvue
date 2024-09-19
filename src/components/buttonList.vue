@@ -43,8 +43,8 @@ function handleExternalLink(url) {
 .ico{
 /* background-image: linear-gradient(to top,#58706494, #fdfdfd91); */
   border-radius: 1.5vh;
-  width: 18%;
-  margin:  1% 3.5%;
+  width: 22%;
+  margin:  1% 1.5%;
 }
 
 .ico:hover {
@@ -52,14 +52,14 @@ function handleExternalLink(url) {
 }
 
 .imag {
-  width:5.5vh;
+  width:6.5vh;
   height:7vh;
 }
 
 .desc {
   color: #333333;
   margin-top: 0vh;
-  font-size: 1.6vh
+  font-size: 1.76vh
 
 }
 

@@ -15,6 +15,8 @@ import wbfw from "@/assets/btn/wbfw04.svg";
 import gjrc from "@/assets/btn/gjrc03.svg";
 import rsda from "@/assets/btn/rsda04.svg";
 import jnrd from "@/assets/btn/jnrd04.svg";
+import zxyw from "@/assets/btn/zxyw.svg";
+
 import g2Line from '@/components/antv/g2Line.vue';
 import pie from '@/components/antv/pie.vue';
 import chord from '@/components/antv/chord.vue';
@@ -46,29 +48,25 @@ const g2Views = [{
 }]
 
 const pieData = [
-  {name: '公司领导', value: 5},
-  {name: '党群综合部', value: 7},
-  {name: '财务管理部', value: 10},
-  {name: '党委', value: 1},
-  {name: '经营管理部', value: 5},
-  {name: '纪检风控部', value: 4},
-  {name: '市场营销中心', value: 3},
-  {name: '产品服务中心', value: 7},
-  {name: '业务发展中心', value: 5},
+{ name: '农业', value: 30 },
+  { name: '制造业', value: 20 },
+  { name: '建筑业', value: 10 },
+  { name: '批发和零售', value: 15 },
+  { name: '服务业（包括旅游、教育、医疗等）', value: 25},
+ 
 ];
 
 const pieData2 = [
-  {name: '财务管理类', value: 10},
-  {name: '纪检类', value: 3},
-  {name: '党群类', value: 3},
-  {name: '行政管理类', value: 4},
-  {name: '人力资源类', value: 4},
-  {name: '投资管理类', value: 1},
-  {name: '经营管理类', value: 7},
-  {name: '市场拓展类', value: 8},
-  {name: '研发类', value: 0},
-  {name: '法律合规类', value: 4},
-  {name: '安全管理类', value: 1},
+  {name: '财务管理类', value: 22},
+  {name: '纪检类', value:3.45},
+  {name: '党群类', value: 3.45},
+  {name: '行政管理类', value: 8.9},
+  {name: '人力资源类', value: 8.9},
+  {name: '投资管理类', value: 2.2},
+  {name: '经营管理类', value: 7.5},
+  {name: '市场拓展类', value: 8.45},
+  {name: '法律合规类', value: 4.45},
+  {name: '安全管理类', value: 1.45},
 ];
 
 const chordData = [
@@ -138,6 +136,7 @@ const chordData = [
     value: 32,
   },
 ];
+
 // 云才出山
 const yccsBtns = ref([
   {
@@ -168,7 +167,7 @@ const yccsBtns = ref([
   {
     imageSrc: lgsc,
     desc: '零工市场',
-    url: "https://www.linggongbao.com/#/",
+    url: "http://qyy-test.lirenkeji.com/#/login?redirect=/home/index",
   },
   {
     imageSrc: ks,
@@ -178,19 +177,24 @@ const yccsBtns = ref([
   {
     imageSrc: px,
     desc: '培训服务',
-    url: "http://www.cepingtong.cn/",
+    url: "https://www.lebanban.com/mall/product/info",
   },
   {
     imageSrc: jnrd,
     desc: '技能认定',
     url: "http://www.kaoshitong.cn/",
   },
-
+  
   {
     imageSrc: rsda,
     desc: '人事档案',
     url: "http://www.beidiaotong.cn/",
 
+  },
+  {
+    imageSrc: zxyw,
+    desc: '咨询业务',
+    url: "https://www.ynhrs.com/ldcms/lianxiwomen.html",
   }
 
 ]);
@@ -205,31 +209,63 @@ const rlzyBtns = ref([
   {
     imageSrc: yqgk,
     desc: '园区概况',
-    url: "http://www.ynythr.com/newslist/yqyy.htm"
+    url: "https://www.ynhrs.com/ldcms/xinwenzhongxin.html"
   },
   {
     imageSrc: zs,
     desc: '招商',
-    url: "http://www.ynythr.com/newslist/tspfxs.htm"
+    url: "https://www.ynhrs.com/ldcms/hangyezixun.html"
   },
   {
     imageSrc: sthb,
     desc: '生态伙伴',
-    url: "http://www.ynythr.com/newslist/zcgg.htm"
+    url: "https://www.ynhrs.com/ldcms/shengtaihuoban.html"
   },
   {
     imageSrc: yqdt,
     desc: '园区动态',
-    url: "http://www.ynythr.com/newslist/yqyy.htm"
+    url: "https://www.ynhrs.com/ldcms/yuanqudongtai.html"
   },
   {
     imageSrc: jyxc,
     desc: '建言献策',
+     url: "https://www.ynhrs.com/ldcms/lianxiwomen"
   },
 ])
 
+//     <p style="width: 70%;font-size: 1.2vw">云投人力成为工业和信息化部人...</p>
+// <p style="width: 25%;font-size: 1.2vw">2024-07-07</p>
+//     <p style="width: 70%;font-size: 1.2vw">云南省2024年度灵活结业人员...</p>
+// <p style="width: 25%;font-size: 1.2vw">2024-07-11</p>
+//     <p style="width: 70%;font-size: 1.2vw">园区经济筑基赋能|云投中心B3...</p>
+// <p style="width: 25%;font-size: 1.2vw">2024-07-12</p>
+const news = ref([
+  { title: "云投中心B3栋14F共享办公室等您来", date: "2024-08-22", url: "https://www.ynhrs.com/ldcms/hangyezixun/343.html" },
+  { title: "云投人力劳务派遣怎么服务的？", date: "2024-07-11", url: "http://www.ynythr.com/ynhrkf/news/zyjnhcypi/15149ec7-98f3-450a-bb80-fe2e604fee64.htm" },
+  { title: "云南外事服务中心“外事服务窗口”...", date: "2024-09-02" , url: "https://www.ynhrs.com/ldcms/yuanqudongtai/414.html"},
+  { title: "云南省人力资源服务业发展研讨...", date: "2024-08-02", url: "https://www.ynhrs.com/ldcms/yuanqudongtai/350.html" },
+  { title: "园区入驻企业招才纳贤", date: "2024-08-02", url: "https://www.ynhrs.com/ldcms/yuanqudongtai/349.html" },
+  { title: "清凉的云南出圈 激发文旅消费新...", date: "2024-09-05", url: "https://www.ynhrs.com/ldcms/pinpaisheji/430.html" },
+  { title: "云投人力创建申报的云南（昆明...", date: "2024-08-02", url: "https://www.ynhrs.com/ldcms/yuanqudongtai/347.html" },
+]);
 
 const startIndex = ref(0);
+
+// 动态计算当前显示的新闻条目，确保始终有 3 个条目
+const currentNews = computed(() => {
+  const totalItems = news.value.length;
+  return [
+    news.value[startIndex.value % totalItems],
+    news.value[(startIndex.value + 1) % totalItems],
+    news.value[(startIndex.value + 2) % totalItems]
+  ];
+});
+
+// 定时切换新闻条目
+setInterval(() => {
+  startIndex.value = (startIndex.value + 1) % news.value.length;
+}, 1500);
+
 
 
 import zbyw from "@/assets/btn/zbyw04.svg";
@@ -242,22 +278,30 @@ const ypcd = ref([
   {
     imageSrc: zbyw,
     desc: '直播业务',
+    url: "https://www.ynhrs.com/ldcms/huacesheji.html",
+
   },
   {
     imageSrc: wljs,
     desc: '文旅介绍',
+    url: "https://www.ynhrs.com/ldcms/pinpaisheji.html",
+
   },
   {
     imageSrc: fycc,
     desc: '非遗传承',
+    url: "https://www.ynhrs.com/ldcms/feiyichuancheng.html",
+
   },
   {
     imageSrc: chwl,
     desc: '吃喝玩乐',
+
   },
   {
     imageSrc: ytyx,
     desc: '云投优选',
+
   },
 
 ])
@@ -268,27 +312,28 @@ import BlockStackBarChart from "@/components/antv/blockStackBarChart.vue";
 import G2LineAi from "@/components/antv/g2LineAi.vue";
 import { removeDuplicateUniforms } from "@antv/l7";
 import Loginbutton from "./icons/loginbutton.vue";
+import Phone from "./icons/Phone.vue";
+import topnav from "./icons/topnav.vue";
 
 const gyytrl = ref([
   {
     imageSrc: qyjs,
     desc: '企业介绍',
-    url: "http://www.ynythr.com/newslist/gsjjvd.htm"
+    url: "https://www.ynhrs.com/ldcms/lianxiwomen"
   },
   {
     imageSrc: djyl,
     desc: '党建引领',
-    url: "http://www.ynythr.com/newslist/dqgz.htm"
+    url: "https://www.ynhrs.com/ldcms/dangjianyinling.html"
   },
   {
     imageSrc: zgzj,
     desc: '职工之家',
-    url: "https://www.cnyig.com/newslist/ytgh.htm"
+    url: "https://www.ynhrs.com/ldcms/zhigongzhijia.html"
   },
 
 
 ])
-
 
 </script>
 <template>
@@ -454,7 +499,6 @@ el-carousel-item{
   background-color: #dce6e1b4;
   border: #2c3e5031 solid 0.1vw;
   text-align: center;
-  margin-top: 1vh;
   width: 94vw;
   padding: 1vw;
 

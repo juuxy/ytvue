@@ -32,9 +32,9 @@ onMounted(() => {
         range: ['#a1b764', '#52682b', '#d4dfbc', '#ffffff', '#6f8379'],
       })
       .label({
-        text: 'value',
+        text: ({ value }) => `${(value ).toFixed(0)}%`, // 使用 formatter 函数将 value 转换为百分比  
         fontWeight: 'bold',
-        offset: 50,
+        offset:45,
         fontSize: 18, // 调整字体大小
         style: {
           fill: '#587064be',

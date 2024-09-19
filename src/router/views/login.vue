@@ -5,6 +5,7 @@
       <!--                  <el-image :src="require('@/assets/logo.png')" style="width: 200px"></el-image>-->
 
       <img src="/src/assets/logo.png" style="width:13%"/>
+      <img src="/src/assets/haoye.png" style="width: 10%;"/>
 
     </el-header>
 
@@ -74,7 +75,7 @@ body, html {
 
   
 .loginy {  
-  background-image: url('@/assets/background/bg04.jpg');   
+  background-image: url('@/assets/background/bg043.jpg');   
   background-size: cover;  
   background-repeat: no-repeat;   
   background-attachment: fixed;  
